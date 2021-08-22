@@ -7,7 +7,7 @@ class AlbumIcon(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
 
-    albums = db.relationship("AlbumIcon", back_populates="icon")
+    albums = db.relationship("Album", back_populates="icon")
 
     def to_dict(self):
         return {

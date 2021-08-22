@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
 
     groups = db.relationship("Group", back_populates="user")
     media_items = db.relationship('MediaItem', back_populates='user')
-    comments = db.relationship('Comment', back_populates='users')
+    comments = db.relationship('Comment', back_populates='user')
 
     @property
     def password(self):

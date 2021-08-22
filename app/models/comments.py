@@ -6,8 +6,9 @@ class Comment(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.Text, nullable=False)
-    album_id = db.Column(db.Integer, nullable=False)
-    user_id = db.Column(db.Integer, nullable=False)
+    album_id = db.Column(db.Integer, db.ForeignKey(
+        'albums.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     album = db.relationship('Album', back_populates='comments')
     user = db.relationship('User', back_populates='comments')

@@ -39,6 +39,8 @@ def upgrade():
                         length=100), nullable=False),
                     sa.Column('group_icon_id', sa.Integer(), nullable=True),
                     sa.Column('user_id', sa.Integer, nullable=False),
+                    sa.ForeignKeyConstraint('group_icon_id', 'groups.id'),
+                    sa.ForeignKeyConstraint('user_id', 'users.id'),
                     sa.PrimaryKeyConstraint('id'),
                     )
 
@@ -57,6 +59,8 @@ def upgrade():
                         length=100), nullable=False),
                     sa.Column('album_icon_id', sa.Integer(), nullable=True),
                     sa.Column('group_id', sa.Integer(), nullable=False),
+                    sa.ForeignKeyConstraint('album_icon_id', 'album_icons.id'),
+                    sa.ForeignKeyConstraint('group_id', 'groups.id'),
                     sa.PrimaryKeyConstraint('id'),
                     )
 
@@ -73,6 +77,8 @@ def upgrade():
                         length=100), nullable=False),
                     sa.Column('album_id', sa.Integer(), nullable=False),
                     sa.Column('user_id', sa.Integer(), nullable=True),
+                    sa.ForeignKeyConstraint('album_id', 'albums.id'),
+                    sa.ForeignKeyConstraint('user_id', 'users.id'),
                     sa.PrimaryKeyConstraint('id'),
                     )
 
@@ -81,6 +87,8 @@ def upgrade():
                     sa.Column('comment', sa.Text, nullable=False),
                     sa.Column('album_id', sa.Integer(), nullable=False),
                     sa.Column('user_id', sa.Integer(), nullable=False),
+                    sa.ForeignKeyConstraint('album_id', 'albums.id'),
+                    sa.ForeignKeyConstraint('user_id', 'users.id'),
                     sa.PrimaryKeyConstraint('id'),
                     )
 
