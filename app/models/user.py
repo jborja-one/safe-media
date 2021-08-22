@@ -13,7 +13,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255), nullable=False)
 
     groups = db.relationship("Group", back_populates="user")
-    media_items = db.relationship('MediaItem', back_populates='user')
+    media_items = db.relationship('MediaItem', back_populates='users')
     comments = db.relationship('Comment', back_populates='user')
 
     @property

@@ -1,4 +1,4 @@
-from app.models import db, Album
+from app.models import db, Group
 
 
 # Adds a demo user, you can add other users here if you want
@@ -49,6 +49,6 @@ def seed_groups():
 # TRUNCATE Removes all the data from the table, and RESET IDENTITY
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
-def undo_users():
+def undo_groups():
     db.session.execute('TRUNCATE groups RESTART IDENTITY CASCADE;')
     db.session.commit()

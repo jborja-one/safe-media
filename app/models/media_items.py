@@ -10,7 +10,7 @@ class MediaItem(db.Model):
         'albums.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    user = db.relationship("User", back_populates="media_items")
+    users = db.relationship("User", back_populates="media_items")
     album = db.relationship('Album', back_populates='media_items')
 
     def to_dict(self):

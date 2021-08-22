@@ -68,6 +68,6 @@ def seed_albums():
 # TRUNCATE Removes all the data from the table, and RESET IDENTITY
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
-def undo_users():
+def undo_albums():
     db.session.execute('TRUNCATE albums RESTART IDENTITY CASCADE;')
     db.session.commit()

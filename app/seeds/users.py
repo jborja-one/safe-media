@@ -20,8 +20,8 @@ def seed_users():
         password='password')
 
     db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(admin)
+    db.session.add(jonathan)
 
     db.session.commit()
 
