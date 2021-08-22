@@ -6,18 +6,19 @@ class Group(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     group_category = db.Column(db.String(100), nullable=False)
-    group_name = db.Column(db.String(100), nullable=True)
-    icon_img = db.Column(db.Text(500), nullable=False)
+    group_title = db.Column(db.String(100), nullable=False)
+    group_icon_id = db.Column(db.Integer, nullable=True)
     user_id = db.Column(db.Integer, nullable=False)
 
-    # restaurant = db.relationship(
-    #     "Restaurant", back_populates="address")
+    user = db.relationship("User", back_populates="groups")
+    icon = db.relationship("GroupIcon", back_populates="groups")
+    albums = db.relationship("Groups", back_populates="groups")
 
     def to_dict(self):
         return {
             'id': self.id,
             'group_category': self.group_category,
-            'group_name': self.group_name,
-            'icon_img': self.icon_img,
+            'group_title': self.group_title,
+            'group_icon_id': self.group_icon_id,
             'user_id': self.user_id
         }

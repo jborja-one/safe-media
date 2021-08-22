@@ -1,0 +1,21 @@
+from .db import db
+
+
+class Comment(db.Model):
+    __tablename__ = 'comments'
+
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.Text(1000), nullable=False)
+    album_id = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.Integer, nullable=False)
+
+    album = db.relationship('Album', back_populates='comments')
+    user = db.relationship('User', back_populates='comments')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'comment': self.comment,
+            'album_id': self.album_id,
+            'user_id': self.user_id,
+        }

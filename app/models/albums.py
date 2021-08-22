@@ -6,18 +6,20 @@ class Album(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     album_category = db.Column(db.String(100), nullable=False)
-    album_name = db.Column(db.String(100), nullable=True)
-    icon_img = db.Column(db.Text(500), nullable=False)
+    album_title = db.Column(db.String(100), nullable=False)
+    album_icon_id = db.Column(db.Integer, nullable=True)
     group_id = db.Column(db.Integer, nullable=False)
 
-    restaurant = db.relationship(
-        "Restaurant", back_populates="address")
+    groups = db.relationship("Groups", back_populates="albums")
+    icon = db.relationship("AlbumIcon", back_populates="albums")
+    media_items = db.relationship('MediaItem', back_populates='album')
+    comments = db.relationship('Comment', back_populates='albums')
 
     def to_dict(self):
         return {
             'id': self.id,
             'album_category': self.album_category,
-            'album_name': self.album_name,
-            'icon_img': self.icon_img,
+            'album_title': self.album_title,
+            'album_icon_id': self.album_icon_id,
             'group_id': self.group_id,
         }
