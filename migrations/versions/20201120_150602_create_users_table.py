@@ -78,8 +78,7 @@ def upgrade():
 
     op.create_table('comments',
                     sa.Column('id', sa.Integer(), nullable=False),
-                    sa.Column('comment', sa.Text(
-                        length=1000), nullable=False),
+                    sa.Column('comment', sa.Text, nullable=False),
                     sa.Column('album_id', sa.Integer(), nullable=False),
                     sa.Column('user_id', sa.Integer(), nullable=False),
                     sa.PrimaryKeyConstraint('id'),
