@@ -18,7 +18,6 @@ def seed_albums():
         album_title='4th of July 2021',
         album_icon_id=3,
         group_id=1)
-
     album_4 = Album(
         album_category='Birthdays',
         album_title='Boss\' Birthday',

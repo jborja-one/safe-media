@@ -11,7 +11,7 @@ class Group(db.Model):
         'group_icons.id'), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    user = db.relationship("User", back_populates="groups")
+    users = db.relationship("User", back_populates="groups")
     icon = db.relationship("GroupIcon", back_populates="groups")
     albums = db.relationship("Album", back_populates="groups")
 
