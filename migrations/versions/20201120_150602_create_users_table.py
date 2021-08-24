@@ -48,6 +48,7 @@ def upgrade():
                     sa.Column('id', sa.Integer(), nullable=False),
                     sa.Column('name', sa.String(
                         length=200), nullable=False),
+                    sa.Column('img_url', sa.Text, nullable=False),
                     sa.PrimaryKeyConstraint('id'),
                     )
 
@@ -68,6 +69,7 @@ def upgrade():
                     sa.Column('id', sa.Integer(), nullable=False),
                     sa.Column('name', sa.String(
                         length=200), nullable=False),
+                    sa.Column('img_url', sa.Text, nullable=False),
                     sa.PrimaryKeyConstraint('id'),
                     )
 

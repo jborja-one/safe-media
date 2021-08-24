@@ -14,8 +14,8 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     # seed_users()
-    # seed_albums()
-    # seed_groups()
+    seed_albums()
+    seed_groups()
     seed_album_icons()
     seed_group_icons()
     # Add other seed functions here
@@ -25,8 +25,8 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     # undo_users()
-    # undo_albums()
-    # undo_groups()
+    undo_albums()
+    undo_groups()
     undo_group_icons()
     undo_album_icons()
     # Add other undo functions here
