@@ -5,9 +5,6 @@
   <img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-logo.png?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMSJIMEYCIQCveKMyYN3s34vFrEMxywd4YdWAXaDyuTdg5C4an%2BaIhQIhAPtopbrQBcxuGNRdsUO9hJCDEzWXfFjN3l6%2FwlztnFkaKtACCBkQABoMNjQzNzY1OTYxODY4IgyPP2Tsr90tjZvn7f4qrQIdusxO0Lud6TPa6MLO4CVOZgcVJTdn%2BMrQysEXxaAbJPoPjjL00oGGpWl87Lalt48pShxt6pGeDDi8Nr9ugeEehCoyDrpslDmgvIOwiatFKXL9kGePfDGIca%2FOuRgfrzrRJ%2FLESh9C%2BEXg0F7mwjWHU5aCBxtERL5iHWSC2pf38hC9XSyKOEhcnJDazvFky0oVfPLvwdR2eo18mhL6HubgsptGtA4xRrv3og9ZWc%2FuGwL0r9qfPje6voZts9jXmg5q%2BvmBGM8TewtlbTtnmBIpXMi8E2ji907BS7Yf1nB1StZPIJLfR%2Fn942L5Q9aaXS5G%2Bn%2F4Cjn7%2FcfGkBXJtgu7oVhnywvm%2ByS9M%2Byd7d%2FBglehns%2BTa2e0c5td%2Ff8YQEgqUsVB7BjEMQ52yFxOMNeCj4kGOrQCKmXo4vmBmGfvUoM4UHQ3rXIyRz6jguJ3J2Q2lOlJ9aFTja4l2jZambXJEYLo2xL5oovV22kV6yY7S0PBH%2BOG81hTZA%2B4CXK5ms3UeVy9SzTgBb2B6pF5rrqPemmhYErArCqcH9ppqbU%2FxnWT2pzHFt6TNcmflTMGQPm76eONXJgEdGzgatpb3ctUS6xZNb9i5as7Y4LgKYhq%2BlACYOn4ySqrXZ5LTbPin%2B0WziAQ%2BIprG%2BGMU83Cf%2B5ZjKnDsoczfwgvBy47p5KsAa6mop784shoVivNrWD09HNxkWvly7bWt96P3EYDEX3JBQv%2FMn47U3MQSrIs3SeAhP%2FjADMOeSj5JlrjCjhFFtdkAnGfmQqx6Ee3A976I%2BsI%2Fok6EFvZALhWevytGv0ZYvXEuoPyFUvu92M%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210824T032723Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAZLY3RASGPRYRIO4M%2F20210824%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=e47af7f14256de2420c7b96aef2fd1806d17f701af81011f2b4a86126608d63b' width='500px' >
 </p>
 
-<br />
-<br />
-
 TableTalk, a <a href='https://opentable.com'>OpenTable</a> and <a href='https://meetup.com'>MeetUp</a> clone, is a web app where users can make reservations at their favorite restaurants and offer to share their table to other guests to not only make a fun, social experience, but also, earn rewards for free goodies at restaurants.
 
 View live: <a href='https://table--talk.herokuapp.com/'>Table Talk</a>
