@@ -1,136 +1,110 @@
-# Flask React Project
+<br />
+<br />
 
-This is the starter for the Flask React project.
+<p align='center'>
+  <img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-db.png' width='500px' >
+</p>
 
-## Getting started
+<br />
+<br />
 
-1. Clone this repository (only this branch)
+TableTalk, a <a href='https://opentable.com'>OpenTable</a> and <a href='https://meetup.com'>MeetUp</a> clone, is a web app where users can make reservations at their favorite restaurants and offer to share their table to other guests to not only make a fun, social experience, but also, earn rewards for free goodies at restaurants.
 
-    ```bash
-    git clone https://github.com/appacademy-starters/python-project-starter.git
-    ```
+View live: <a href='https://table--talk.herokuapp.com/'>Table Talk</a>
 
-2. Install dependencies
+<br />
 
-    ```bash
-    pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-    ```
+## Features
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+-   User Sign up/in with email and password (Demo account link provided)
+-   Create, Edit and Delete groups for categorizing your media uploads
+-   Create, Edit and Delete albums to further categorize and sort you media uploads
+-   Create, Delete media uploads in your albums, such as images, audio files, videos
+    <br />
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+## Home/Landing Page
 
-    ```bash
-    pipenv shell
-    ```
+-   Image here (coming soon...)
+    <br />
 
-    ```bash
-    flask db upgrade
-    ```
+## User Profile Page
 
-    ```bash
-    flask seed all
-    ```
+-   Image here (coming soon...)
+    <br />
 
-    ```bash
-    flask run
-    ```
+## Albums Page
 
-6. To run the React App in development, checkout the [README](./react
+-   Image here (coming soon...)
+    <br />
 
----
+# Technologies
 
-_IMPORTANT!_
-If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-You can do this by running:
+-   Python <a href="https://www.python.org/"><img alt="Python" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=Python&logoColor=white&" /></a>
+-   CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/-CSS3-1572B6?logo=CSS3" /></a>
+-   HTML <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/-HTML5-E34F26?logo=HTML5&logoColor=ffffff" /></a>
+-   Flask <a href="https://flask.palletsprojects.com/en/1.1.x/"><img alt="Flask" src="https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=Flask&logoColor=white" /></a>
+-   PostgreSQL <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/-PostgreSQL-336791?logo=PostgreSQL" /></a>
+-   React <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/-React-61DAFB?logo=React&logoColor=333333" /></a>
+-   Redux <a href="https://redux.js.org/"><img src="https://img.shields.io/badge/-Redux-764ABC?logo=Redux" /></a>
+-   SQLAlchemy <a href=https://www.sqlalchemy.org/><img src=https://img.shields.io/badge/-SQLAlchemy-red /></a>
+    <br />
 
-```bash
-pipenv lock -r > requirements.txt
+## Installation
+
+1. After cloning the project, from the TableTalk (root) folder, run in the terminal:
+
+```
+ pipenv install
 ```
 
-_ALSO IMPORTANT!_
-psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
+2. In the root folder, enter the flask shell by running in the terminal:
 
----
+```
+ pipenv shell
+```
 
-## Deploy to Heroku
+3. In the root folder, create the database by running in the terminal:
 
-1. Before you deploy, don't forget to run the following command in order to
-   ensure that your production environment has all of your up-to-date
-   dependencies. You only have to run this command when you have installed new
-   Python packages since your last deployment, but if you aren't sure, it won't
-   hurt to run it again.
+```
+flask db create
+```
 
-    ```bash
-    pipenv lock -r > requirements.txt
-    ```
+4. In the root folder, migrate tables to the database by running in the terminal:
 
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
+```
+flask db migrate
+```
 
-    ```bash
-    heroku login
-    ```
+5. In the root folder, seed the database by running in the terminal:
 
-6. Login to the heroku container registry
+```
+flask seed all
+```
 
-    ```bash
-    heroku container:login
-    ```
+6. In the root folder, start the backend by running in the terminal:
 
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
+```
+flask run
+```
 
-    ```bash
-    heroku container:push web -a {NAME_OF_HEROKU_APP}
-    ```
+7. In the react-app folder, run in the terminal:
 
-9. Release your docker container to heroku
+```
+npm install
+```
 
-    ```bash
-    heroku container:release web -a {NAME_OF_HEROKU_APP}
-    ```
+8. In the react-app, start the frontend by running in the terminal:
 
-10. set up your database
+```
+npm start
+```
 
-    ```bash
-    heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-    heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-    ```
+9. In the browser, navigate to 'http://localhost:3000/'
 
-11. Under Settings find "Config Vars" and add any additional/secret .env
-    variables.
+<br />
 
-12. profit
+### Connect with me:
 
-### For M1 Mac users
-
-(Replaces **Step 8**)
-
-1. Build image with linux platform for heroku servers. Replace
-   {NAME_OF_HEROKU_APP} with your own tag:
-
-    ```bash=
-    docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-    ```
-
-2. Tag your app with the url for your apps registry. Make sure to use the name
-   of your Heroku app in the url and tag name:
-
-    ```bash=2
-    docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-    ```
-
-3. Use docker to push the image to the Heroku container registry:
-
-    ```bash=3
-    docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-    ```
+<a href="https://www.linkedin.com/in/jonathan-borja-1a9959172/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
+<a href="mailto:jborja-one@gmail.com?subject=GitHub"><img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>&nbsp;
+<a href="https://jborja-one.github.io/"><img src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" alt="website" width=30/></a>&nbsp;

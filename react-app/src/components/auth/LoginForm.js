@@ -19,10 +19,7 @@ const LoginForm = () => {
 	};
 	const demoLogin = async (e) => {
 		e.preventDefault();
-		const data = await dispatch(login('demo@aa.io', 'password'));
-		if (data) {
-			setErrors(data);
-		}
+		await dispatch(login('demo@aa.io', 'password'));
 	};
 
 	const updateEmail = (e) => {
