@@ -11,7 +11,7 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     album = db.relationship('Album', back_populates='comments')
-    user = db.relationship('User', back_populates='comments')
+    users = db.relationship('User', back_populates='comments')
 
     def to_dict(self):
         return {

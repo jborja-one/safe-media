@@ -12,9 +12,9 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(255), nullable=False)
 
-    groups = db.relationship("Group", back_populates="user")
+    groups = db.relationship("Group", back_populates="users")
     media_items = db.relationship('MediaItem', back_populates='users')
-    comments = db.relationship('Comment', back_populates='user')
+    comments = db.relationship('Comment', back_populates='users')
 
     @property
     def password(self):
