@@ -2,6 +2,8 @@ from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .groups import seed_groups, undo_groups
 from .albums import seed_albums, undo_albums
+from .album_icons import seed_album_icons, undo_album_icons
+from .group_icons import seed_group_icons, undo_group_icons
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -13,7 +15,9 @@ seed_commands = AppGroup('seed')
 def seed():
     # seed_users()
     # seed_albums()
-    seed_groups()
+    # seed_groups()
+    seed_album_icons()
+    seed_group_icons()
     # Add other seed functions here
 
 
@@ -22,5 +26,7 @@ def seed():
 def undo():
     # undo_users()
     # undo_albums()
-    undo_groups()
+    # undo_groups()
+    undo_group_icons()
+    undo_album_icons()
     # Add other undo functions here

@@ -9,12 +9,12 @@ def seed_albums():
         album_icon_id=1,
         group_id=1)
     album_2 = Album(
-        album_category='Family-Holidays',
+        album_category='Holidays',
         album_title='Thanksgiving 2020',
         album_icon_id=2,
         group_id=1)
     album_3 = Album(
-        album_category='Family-Events',
+        album_category='Events',
         album_title='4th of July 2021',
         album_icon_id=3,
         group_id=1)
