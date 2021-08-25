@@ -20,13 +20,19 @@ const LoginForm = ({ setShowModal }) => {
 		if (user) {
 			setShowModal(false);
 		}
+		if (user) {
+			return <Redirect to={/users/`${user.id}`} />;
+		}
 	};
 
 	const demoLogin = async (e) => {
 		e.preventDefault();
-		const user = await dispatch(login('demo@user.com', 'password'));
+		await dispatch(login('demo@aa.io', 'password'));
 		if (user) {
 			setShowModal(false);
+		}
+		if (user) {
+			return <Redirect to={/users/`${user.id}`} />;
 		}
 	};
 
@@ -37,10 +43,6 @@ const LoginForm = ({ setShowModal }) => {
 	const updatePassword = (e) => {
 		setPassword(e.target.value);
 	};
-
-	if (user) {
-		return <Redirect to='/' />;
-	}
 
 	return (
 		<div className='form_container'>

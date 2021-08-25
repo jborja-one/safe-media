@@ -13,7 +13,7 @@ const NavBar = () => {
 		sessionLinks = (
 			<div className='navbar-container'>
 				<NavLink
-					to='/'
+					to={`/users/${sessionUser?.id}`}
 					exact={true}
 					activeClassName='active'
 					className='navbar-links'>
@@ -28,7 +28,7 @@ const NavBar = () => {
 					/>
 				</NavLink>
 				<NavLink
-					to='/'
+					to={`/users/${sessionUser?.id}`}
 					exact={true}
 					activeClassName='active'
 					className='navbar-links'></NavLink>
@@ -36,12 +36,27 @@ const NavBar = () => {
 			</div>
 		);
 	} else {
-		<LogoutButton />;
+		sessionLinks = (
+			<div className='navbar-container'>
+				<LogoutButton />
+				<NavLink to='/' exact={true} activeClassName='active'>
+					<img
+						className='navbar-logo'
+						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-favicon-nobg.png'
+						width='80px'
+					/>
+				</NavLink>
+				<a className='login-button' href=''>
+					{' '}
+					Contact Us{' '}
+				</a>
+			</div>
+		);
 	}
 
 	return (
 		<>
-			<div>{sessionLinks}</div>
+			<div className='session-links'>{sessionLinks}</div>
 		</>
 	);
 };
