@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+.home-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	font-family: Acme;
+}
+
+.header-container {
+	display: block;
+	/* position: relative; */
+	right: -20px;
+	margin-top: 60px;
+	margin-right: 70px;
+	font-size: 27px;
+	padding: 2px;
+}
+
+.header-container1 {
+	display: flex;
+	justify-content: center;
+	margin-top: -20px;
+}
+
+.block {
+	margin: 20px;
+}

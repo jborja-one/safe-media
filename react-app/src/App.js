@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
+import LandingPage from './components/LandingPage/LandingPage';
 import User from './components/User';
 import { authenticate } from './store/session';
 
@@ -26,6 +26,9 @@ function App() {
 		<BrowserRouter>
 			<NavBar />
 			<Switch>
+				<Route path='/login'>
+					<LandingPage />
+				</Route>
 				<ProtectedRoute path='/users/:userId' exact={true}>
 					<User />
 				</ProtectedRoute>

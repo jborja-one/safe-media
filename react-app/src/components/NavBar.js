@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import UserLoginModal from './UserLoginModal';
+import UserSignUpForm from './UserSignUpFormModal';
 
 const NavBar = () => {
 	const sessionUser = useSelector((state) => state.session.user);
@@ -10,32 +11,38 @@ const NavBar = () => {
 	let sessionLinks;
 	if (!sessionUser) {
 		sessionLinks = (
-			<>
-				<NavLink to='/' exact={true} activeClassName='active'>
-					Login
+			<div className='navbar-container'>
+				<NavLink
+					to='/'
+					exact={true}
+					activeClassName='active'
+					className='navbar-links'>
 					<UserLoginModal />
 				</NavLink>
 				<NavLink to='/' exact={true} activeClassName='active'>
-					Sign Up
+					<img
+						className='navbar-logo'
+						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-favicon-nobg.png'
+						width='80px'
+					/>
 				</NavLink>
-			</>
+				<NavLink
+					to='/'
+					exact={true}
+					activeClassName='active'
+					className='navbar-links'>
+					<UserSignUpForm />
+				</NavLink>
+			</div>
 		);
 	} else {
 		<LogoutButton />;
 	}
 
 	return (
-		<nav>
-			<>
-				<NavLink to='/' exact={true} activeClassName='active'>
-					<img
-						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-favicon-nobg.png'
-						width='80px'
-					/>
-				</NavLink>
-				<div>{sessionLinks}</div>
-			</>
-		</nav>
+		<>
+			<div>{sessionLinks}</div>
+		</>
 	);
 };
 
