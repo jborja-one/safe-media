@@ -6,27 +6,27 @@ def seed_album_icons():
     birthdays = AlbumIcon(
         id=1,
         name='Birthdays',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/birthday.png'),
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/birthday.png')
     holidays = AlbumIcon(
         id=2,
         name='Holidays',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/holiday.png'),
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/holiday.png')
     events = AlbumIcon(
         id=3,
         name='Events',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/events.png'),
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/events.png')
     work_fun = AlbumIcon(
         id=4,
         name='Work-Fun',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/work-fun.png'),
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/work-fun.png')
     camping = AlbumIcon(
         id=5,
         name='Camping',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/camping.png'),
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/camping.png')
     night_out = AlbumIcon(
         id=6,
         name='Night-Out',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/night-out.png'),
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/album_icons/night-out.png')
 
     db.session.add(birthdays)
     db.session.add(holidays)

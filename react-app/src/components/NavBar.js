@@ -17,8 +17,9 @@ const NavBar = () => {
 					exact={true}
 					activeClassName='active'
 					className='navbar-links'>
-					<UserLoginModal />
+					{' '}
 				</NavLink>
+				<UserLoginModal />
 				<NavLink to='/' exact={true} activeClassName='active'>
 					<img
 						className='navbar-logo'
@@ -30,9 +31,8 @@ const NavBar = () => {
 					to='/'
 					exact={true}
 					activeClassName='active'
-					className='navbar-links'>
-					<UserSignUpForm />
-				</NavLink>
+					className='navbar-links'></NavLink>
+				<UserSignUpForm />
 			</div>
 		);
 	} else {

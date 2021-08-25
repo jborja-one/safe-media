@@ -10,11 +10,11 @@ def seed_group_icons():
     work = GroupIcon(
         id=2,
         name='Work',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/work.png'),
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/work.png')
     friends = GroupIcon(
         id=3,
         name='Friends',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/friends.png'),
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/friends.png')
 
     db.session.add(family)
     db.session.add(work)

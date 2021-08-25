@@ -10,7 +10,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     first_name = db.Column(db.String(100), nullable=False)
     last_name = db.Column(db.String(100), nullable=False)
-    password = db.Column(db.String(255), nullable=False)
+    hashed_password = db.Column(db.String(255), nullable=False)
 
     groups = db.relationship("Group", back_populates="users")
     media_items = db.relationship('MediaItem', back_populates='users')
@@ -18,14 +18,14 @@ class User(db.Model, UserMixin):
 
     @property
     def password(self):
-        return self.password
+        return self.hashed_password
 
     @password.setter
     def password(self, password):
-        self.password = generate_password_hash(password)
+        self.hashed_password = generate_password_hash(password)
 
     def check_password(self, password):
-        return check_password_hash(self.password, password)
+        return check_password_hash(self.hashed_password, password)
 
     def to_dict(self):
         return {

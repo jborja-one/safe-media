@@ -19,7 +19,7 @@ const LandingPage = () => {
 					</div>
 				</div>
 			</div>
-			<div></div>
+			<div className='feature-bar'></div>
 		</>
 	);
 };

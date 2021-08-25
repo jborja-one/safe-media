@@ -26,7 +26,7 @@ function App() {
 		<BrowserRouter>
 			<NavBar />
 			<Switch>
-				<Route path='/login'>
+				<Route path='/'>
 					<LandingPage />
 				</Route>
 				<ProtectedRoute path='/users/:userId' exact={true}>
