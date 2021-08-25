@@ -11,14 +11,14 @@ function UserLoginModal() {
 			<div className='login-button' onClick={() => setShowModal(true)}>
 				Login
 			</div>
-			{showModal && (
+			{/* {showModal && (
 				<Modal onClose={() => setShowModal(false)}>
 					<div className='login-title-container'>
 						<h3 className='login-title'>Login to Safe Media</h3>
 					</div>
 					<LoginForm setShowModal={setShowModal} />
 				</Modal>
-			)}
+			)} */}
 		</>
 	);
 }

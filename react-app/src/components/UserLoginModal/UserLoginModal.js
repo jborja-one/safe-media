@@ -77,7 +77,7 @@ const LoginForm = ({ setShowModal }) => {
 						Login
 					</button>
 				</div>
-				{/* <div className='demo-login-container'>
+				<div className='demo-login-container'>
 					<p className='demo-text'>
 						To Safe Media Demo,{' '}
 						<a className='demo-click-here' onClick={demoLogin}>
@@ -85,7 +85,7 @@ const LoginForm = ({ setShowModal }) => {
 							Click Here{' '}
 						</a>
 					</p>
-				</div> */}
+				</div>
 			</form>
 		</div>
 	);

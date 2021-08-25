@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600&family=Roboto:wght@100;300;400;500&display=swap');
 
 .login-button {
-	border: 1px white solid;
-	border-radius: 5px;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: Acme;
+	text-decoration: none;
 	color: black;
-	font-family: 'Baloo 2', serif;
-	margin-bottom: 18px;
-	margin-top: 5px;
-	margin-left: 10px;
-	padding: 5px 10px 5px 10px;
+	transition-property: color;
+	transition-delay: 0;
 	cursor: pointer;
+}
+
+.login-button:hover {
+	color: plum;
 }
 
 #modal-content {
