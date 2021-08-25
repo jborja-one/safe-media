@@ -29,7 +29,7 @@ function App() {
 				<Route path='/' exact={true}>
 					<LandingPage />
 				</Route>
-				<ProtectedRoute path='/users/:userId' exact={true}>
+				<ProtectedRoute path='/users/:id' exact={true}>
 					<ProfilePage />
 				</ProtectedRoute>
 			</Switch>

@@ -5,12 +5,8 @@ const load_groups = (groups) => ({
 	groups,
 });
 
-export const getGroups = (userId) => async (dispatch) => {
-	debugger;
-	const res = await fetch(`/api/groups/${userId}`);
-	console.log('------------------------------------');
-	console.log(res, '********');
-	console.log('------------------------------------');
+export const getGroups = (id) => async (dispatch) => {
+	const res = await fetch(`/api/groups/${id}`);
 
 	if (res.ok) {
 		const groups = await res.json();

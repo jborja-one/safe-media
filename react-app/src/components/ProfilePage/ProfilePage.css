@@ -1,0 +1,27 @@
+.profile-page__container {
+	display: flex;
+	flex-direction: row;
+}
+
+.user-info__container {
+	width: 300px;
+	height: 500px;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 25px;
+	box-shadow: 2px 2px mediumaquamarine;
+	margin: 30px;
+}
+
+.group-card__container {
+	display: flex;
+	margin: 30px;
+	padding: 30px;
+}
+
+.groups-card {
+	margin: 20px;
+}
