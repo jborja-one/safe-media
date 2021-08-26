@@ -2,22 +2,22 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
 import { getGroups } from '../../store/groups';
+import { deleteGroup } from '../../store/groups';
+import CreateGroupModal from '../CreateGroup';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
 	const groups = Object.values(useSelector((state) => state.groups));
-	console.log('------------------------------------');
-	console.log(groups, '*******');
-	console.log('------------------------------------');
 
 	useEffect(() => {
 		dispatch(getGroups(id));
-		console.log('------------------------------------');
-		console.log(id);
-		console.log('------------------------------------');
 	}, [dispatch]);
+
+	const handleDelete = (e) => {
+		dispatch(deleteGroup(id));
+	};
 
 	return (
 		<div className='profile-page__container'>
@@ -40,6 +40,10 @@ const ProfilePage = () => {
 			</div>
 			<div className='groups-container'>
 				<div className='group-card__container'>
+					{/* <Link>
+						<i class='far fa-plus-square'></i>
+					</Link> */}
+					<CreateGroupModal />
 					{groups &&
 						groups?.map((group) => (
 							<>
@@ -54,6 +58,9 @@ const ProfilePage = () => {
 											<div>{group?.group_title}</div>
 										</div>
 									</Link>
+									<i
+										className='far fa-trash-alt'
+										onClick={handleDelete}></i>
 								</div>
 							</>
 						))}
