@@ -55,14 +55,25 @@ const CreateGroup = ({ setShowModal }) => {
 						required></input>
 				</div>
 				<div>
-					<input
+					<select
 						className='form-input'
 						placeholder='Group Icon'
 						type='text'
 						name='icon'
 						onChange={updateIcon}
 						value={icon}
-						required></input>
+						required>
+						<option value='' disabled selected>
+							Select an Icon
+						</option>
+						{groups?.map((group) => {
+							<option
+								key={group.icon.name}
+								value='group.icon.name'>
+								{group?.icon.name}
+							</option>;
+						})}
+					</select>
 				</div>
 				<div className='add-restaurant__button-container'>
 					<button id='restaurant-submit-button' type='submit'>

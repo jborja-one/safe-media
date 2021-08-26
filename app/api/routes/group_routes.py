@@ -39,7 +39,7 @@ def create_group():
         group = Group(
             group_category=form.data['group_category'],
             group_title=form.data['group_title'],
-            group_icon_id=groups.group_icon_id,
+            group_icon_id=form.data['group_icon_id'],
             user_id=groups.user_id
         )
         db.session.add(group)
