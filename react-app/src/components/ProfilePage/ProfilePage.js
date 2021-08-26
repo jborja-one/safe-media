@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
 import { getGroups } from '../../store/groups';
 import { deleteGroup } from '../../store/groups';
+import CreateGroupModal from '../CreateGroup';
 import './ProfilePage.css';
 
-const ProfilePage = (groupId) => {
+const ProfilePage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
 	const groups = Object.values(useSelector((state) => state.groups));
@@ -15,11 +16,7 @@ const ProfilePage = (groupId) => {
 	}, [dispatch]);
 
 	const handleDelete = (e) => {
-		const deleted = dispatch(deleteGroup(groupId));
-		// if (deleted) {
-		// 	e.preventDefault();
-		// 	return alert('Please try again');
-		// }
+		dispatch(deleteGroup(id));
 	};
 
 	return (
@@ -43,6 +40,10 @@ const ProfilePage = (groupId) => {
 			</div>
 			<div className='groups-container'>
 				<div className='group-card__container'>
+					{/* <Link>
+						<i class='far fa-plus-square'></i>
+					</Link> */}
+					<CreateGroupModal />
 					{groups &&
 						groups?.map((group) => (
 							<>
@@ -58,7 +59,7 @@ const ProfilePage = (groupId) => {
 										</div>
 									</Link>
 									<i
-										class='far fa-trash-alt'
+										className='far fa-trash-alt'
 										onClick={handleDelete}></i>
 								</div>
 							</>
