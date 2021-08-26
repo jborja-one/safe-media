@@ -35,7 +35,7 @@ export const createGroup =
 			body: JSON.stringify({
 				category_id: category,
 				category_title: categoryTitle,
-				group_icon_id: groupIconId,
+				group_icon_id: +groupIconId,
 				user_id: userId,
 			}),
 		});

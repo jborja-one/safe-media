@@ -40,9 +40,6 @@ const ProfilePage = () => {
 			</div>
 			<div className='groups-container'>
 				<div className='group-card__container'>
-					{/* <Link>
-						<i class='far fa-plus-square'></i>
-					</Link> */}
 					<CreateGroupModal />
 					{groups &&
 						groups?.map((group) => (
@@ -54,7 +51,12 @@ const ProfilePage = () => {
 										key={group.id}>
 										<div>
 											<div>{group?.group_category}</div>
-											<div>{group?.img_url}</div>
+											<div>
+												<img
+													src={
+														group?.icon.img_url
+													}></img>
+											</div>
 											<div>{group?.group_title}</div>
 										</div>
 									</Link>
