@@ -1,37 +1,34 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
-import { getGroups, deleteGroup } from '../../store/groups';
-import CreateGroupModal from '../CreateGroup';
-import './ProfilePage.css';
+import { getAlbums, deleteAlbum } from '../../store/albums';
+import CreateAlbumModal from '../CreateAlbum';
 
-const ProfilePage = () => {
+const GroupPage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
-	const groups = Object.values(useSelector((state) => state.groups));
+	const albums = Object.values(useSelector((state) => state.albums));
+	const users = Object.values(useSelector((state) => state.session));
 
 	useEffect(() => {
-		dispatch(getGroups(id));
+		dispatch(getAlbums(id));
 	}, [dispatch]);
 
 	const handleDelete = (e) => {
-		dispatch(deleteGroup(id));
+		dispatch(deleteAlbum(id));
 	};
 
 	return (
 		<div className='profile-page__container'>
 			<div className='sidebar-container'>
 				<div className='user-info__container'>
-					{groups?.map((group) => (
+					{users?.map((user) => (
 						<>
 							<div className='groups-card'>
 								<div className='user-name'>
-									{group.user.first_name}{' '}
-									{group.user.last_name}
+									{user.first_name} {user.last_name}
 								</div>
-								<div className='user-email'>
-									{group.user.email}
-								</div>
+								<div className='user-email'>{user.email}</div>
 							</div>
 						</>
 					))}
@@ -39,25 +36,25 @@ const ProfilePage = () => {
 			</div>
 			<div className='groups-container'>
 				<div className='group-card__container'>
-					<CreateGroupModal />
-					{groups &&
-						groups?.map((group) => (
+					<CreateAlbumModal />
+					{albums &&
+						albums?.map((album) => (
 							<>
 								<div className='groups-card'>
 									<Link
 										className='card-link'
-										to={`/groups/${group.id}`}
-										key={group.id}>
+										to={`/albums/${album.id}`}
+										key={album.id}>
 										<div>
-											<div>{group?.group_category}</div>
+											<div>{album?.album_category}</div>
 											<div>
 												<img
 													className='icon-img'
 													src={
-														group?.icon.img_url
+														album?.icon.img_url
 													}></img>
 											</div>
-											<div>{group?.group_title}</div>
+											<div>{album?.album_title}</div>
 										</div>
 									</Link>
 									<i
@@ -72,4 +69,4 @@ const ProfilePage = () => {
 	);
 };
 
-export default ProfilePage;
+export default GroupPage;

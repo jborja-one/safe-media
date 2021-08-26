@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createGroup } from '../../store/groups';
+import { createAlbum } from '../../store/albums';
 
-const CreateGroup = ({ setShowModal }) => {
-	const groups = Object.values(useSelector((state) => state.groups));
+const CreateAlbum = ({ setShowModal }) => {
+	const albums = Object.values(useSelector((state) => state.albums));
 	const dispatch = useDispatch();
 
 	const [errors, setErrors] = useState([]);
@@ -14,7 +14,7 @@ const CreateGroup = ({ setShowModal }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const data = await dispatch(
-			createGroup(category, title, icon, groups.user_id)
+			createAlbum(category, title, icon, albums.group_id)
 		);
 		setShowModal(false);
 		if (data.errors) {
@@ -35,7 +35,7 @@ const CreateGroup = ({ setShowModal }) => {
 				<div>
 					<input
 						className='form-input'
-						placeholder='Group Category'
+						placeholder='Album Category'
 						type='text'
 						name='category'
 						onChange={updateCategory}
@@ -45,7 +45,7 @@ const CreateGroup = ({ setShowModal }) => {
 				<div>
 					<input
 						className='form-input'
-						placeholder='Group Title'
+						placeholder='Album Title'
 						type='text'
 						name='title'
 						onChange={updateTitle}
@@ -55,7 +55,7 @@ const CreateGroup = ({ setShowModal }) => {
 				<div>
 					<select
 						className='form-input'
-						placeholder='Group Icon'
+						placeholder='Album Icon'
 						type='text'
 						name='icon'
 						onChange={updateIcon}
@@ -64,16 +64,16 @@ const CreateGroup = ({ setShowModal }) => {
 						<option value='' disabled selected>
 							Select an Icon
 						</option>
-						{groups?.map((group) => {
-							<option key={group.icon.id} value='group.icon.id'>
-								{group?.icon.name}
+						{albums?.map((album) => {
+							<option key={album.id} value='album.icon.id'>
+								{album?.icon.name}
 							</option>;
 						})}
 					</select>
 				</div>
 				<div className='add-restaurant__button-container'>
 					<button id='restaurant-submit-button' type='submit'>
-						Create Group
+						Create Album
 					</button>
 				</div>
 			</form>
@@ -81,4 +81,4 @@ const CreateGroup = ({ setShowModal }) => {
 	);
 };
 
-export default CreateGroup;
+export default CreateAlbum;

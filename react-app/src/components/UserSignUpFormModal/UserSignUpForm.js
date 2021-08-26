@@ -26,6 +26,7 @@ const SignUpForm = ({ setShowModal }) => {
 			if (user) {
 				setShowModal(false);
 			}
+			return <Redirect to={/users/`${user.id}`} />;
 		}
 	};
 
@@ -128,7 +129,7 @@ const SignUpForm = ({ setShowModal }) => {
 				</div>
 				<div className='demo-login-container'>
 					<p className='demo-text'>
-						To demo TableTalk,{' '}
+						To Safe Media Demo,{' '}
 						<a className='demo-click-here' onClick={demoLogin}>
 							Click Here
 						</a>

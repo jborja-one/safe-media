@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import LandingPage from './components/LandingPage/LandingPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
+import GroupPage from './components/GroupsPage/GroupPage';
 import { authenticate } from './store/session';
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
 				</Route>
 				<ProtectedRoute path='/users/:id' exact={true}>
 					<ProfilePage />
+				</ProtectedRoute>
+				<ProtectedRoute path='/groups/:id'>
+					<GroupPage />
 				</ProtectedRoute>
 			</Switch>
 		</BrowserRouter>
