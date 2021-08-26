@@ -28,3 +28,11 @@ def get_groups(userId):
         group['user'] = User.query.get(group['user_id']).to_dict()
     print(list(groups), '*************************')
     return {'groups': groups}
+
+
+@group_routes.route('/<int:id>', methods=['DELETE'])
+def delete_group(id):
+    group = Group.query.get(id)
+    db.session.delete(group)
+    db.session.commit()
+    return{'message': 'Delete Success'}, 204
