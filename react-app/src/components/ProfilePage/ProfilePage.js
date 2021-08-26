@@ -53,6 +53,7 @@ const ProfilePage = () => {
 											<div>{group?.group_category}</div>
 											<div>
 												<img
+													className='icon-img'
 													src={
 														group?.icon.img_url
 													}></img>
