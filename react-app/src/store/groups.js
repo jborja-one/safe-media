@@ -36,7 +36,7 @@ export const createGroup =
 				category_id: category,
 				category_title: categoryTitle,
 				group_icon_id: groupIconId,
-				user_id: userId,
+				user_id: +userId,
 			}),
 		});
 		if (res.ok) {
