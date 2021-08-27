@@ -15,25 +15,20 @@ const SignUpForm = ({ setShowModal }) => {
 	const dispatch = useDispatch();
 	const history = useHistory();
 
-	console.log('------------------------------------');
-	console.log(signUp, '**********from signUpform************');
-	console.log('------------------------------------');
-
 	const onSignUp = async (e) => {
 		e.preventDefault();
 		if (password === repeatPassword) {
 			const data = await dispatch(
 				signUp(email, firstName, lastName, password)
 			);
-			// if (data) {
-			// 	setErrors(data);
-			// }
-
-			if (data) {
-				debugger;
+			if (data?.errors) {
+				setErrors(data.errors);
+			} else if (data) {
 				setShowModal(false);
 				return history.push(`/users/${data.id}`);
 			}
+		} else {
+			return setErrors(['Passwords do not match']);
 		}
 	};
 

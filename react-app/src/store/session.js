@@ -44,7 +44,7 @@ export const login = (email, password) => async (dispatch) => {
 	if (response.ok) {
 		const data = await response.json();
 		dispatch(setUser(data));
-		return null;
+		return data;
 	} else if (response.status < 500) {
 		const data = await response.json();
 		if (data.errors) {
@@ -89,7 +89,7 @@ export const signUp =
 		} else if (response.status < 500) {
 			const data = await response.json();
 			if (data.errors) {
-				return data.errors;
+				return data;
 			}
 		} else {
 			return ['An error occurred. Please try again.'];
