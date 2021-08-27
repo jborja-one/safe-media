@@ -22,9 +22,7 @@ const LoginForm = ({ setShowModal }) => {
 		if (user) {
 			setShowModal(false);
 		}
-		if (user) {
-			return history.push('/users/id');
-		}
+		return history.push('/users/id');
 	};
 
 	const demoLogin = async (e) => {
@@ -34,6 +32,7 @@ const LoginForm = ({ setShowModal }) => {
 			setShowModal(false);
 		}
 		if (user) {
+			// here I tried Redirect, and history, and none seem to work
 			return history.push('/users/id');
 		}
 	};

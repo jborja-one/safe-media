@@ -13,7 +13,7 @@ const NavBar = () => {
 		sessionLinks = (
 			<div className='navbar-container'>
 				<NavLink
-					to={`/users/${sessionUser?.user.id}`}
+					to={`/users/${sessionUser?.id}`}
 					exact={true}
 					activeClassName='active'
 					className='navbar-links'>
@@ -28,7 +28,7 @@ const NavBar = () => {
 					/>
 				</NavLink>
 				<NavLink
-					to={`/users/${sessionUser?.user.id}`}
+					to={`/users/${sessionUser?.id}`}
 					exact={true}
 					activeClassName='active'
 					className='navbar-links'></NavLink>
