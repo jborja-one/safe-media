@@ -20,6 +20,9 @@ const ProfilePage = () => {
 
 	return (
 		<div className='profile-page__container'>
+			<div>
+				<h1>My Groups</h1>
+			</div>
 			<div className='sidebar-container'>
 				<div className='user-info__container'>
 					{groups?.map((group) => (

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { signUp } from '../../store/session';
-import { login } from '../../store/session';
+import { signUp, login } from '../../store/session';
+import { useHistory } from 'react-router';
 
 const SignUpForm = ({ setShowModal }) => {
 	const [errors, setErrors] = useState([]);
@@ -13,6 +13,7 @@ const SignUpForm = ({ setShowModal }) => {
 	const [repeatPassword, setRepeatPassword] = useState('');
 	const user = useSelector((state) => state.session.user);
 	const dispatch = useDispatch();
+	const history = useHistory();
 
 	const onSignUp = async (e) => {
 		e.preventDefault();
@@ -26,7 +27,7 @@ const SignUpForm = ({ setShowModal }) => {
 			if (user) {
 				setShowModal(false);
 			}
-			return <Redirect to={/users/`${user.id}`} />;
+			return history.push('/users/id');
 		}
 	};
 
