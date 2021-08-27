@@ -17,24 +17,22 @@ const LoginForm = ({ setShowModal }) => {
 		e.preventDefault();
 		const data = await dispatch(login(email, password));
 
+		// if (data) {
+		// 	setErrors(data);
+		// }
+
 		if (data) {
-			setErrors(data);
-		}
-		if (user) {
 			setShowModal(false);
+			return history.push(`/users/${data.id}`);
 		}
-		return history.push('/users/id');
 	};
 
 	const demoLogin = async (e) => {
 		e.preventDefault();
-		await dispatch(login('demo@aa.io', 'password'));
-		if (user) {
+		const data = await dispatch(login('demo@aa.io', 'password'));
+		if (data) {
 			setShowModal(false);
-		}
-		if (user) {
-			// here I tried Redirect, and history, and none seem to work
-			return history.push('/users/id');
+			return history.push(`/users/${data.id}`);
 		}
 	};
 
