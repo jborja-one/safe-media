@@ -35,17 +35,23 @@ export const createGroup =
 			body: JSON.stringify({
 				category_id: category,
 				category_title: categoryTitle,
-				group_icon_id: +groupIconId,
+				group_icon_id: groupIconId,
 				user_id: userId,
 			}),
 		});
-		const group = await res.json();
 		if (res.ok) {
+			const group = await res.json();
 			dispatch(create_group(group));
 			return group;
+		} else if (res.status < 500) {
+			const data = await res.json();
+			if (data.errors) {
+				return data;
+			}
+		} else {
+			return ['An error occurred. Please try again.'];
 		}
 	};
-
 export const deleteGroup = (id) => async (dispatch) => {
 	const deleted = await fetch(`/api/groups/${id}`, {
 		method: 'DELETE',

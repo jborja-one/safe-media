@@ -24,8 +24,10 @@ const CreateGroup = ({ setShowModal }) => {
 			createGroup(category, title, icon, groups.user_id)
 		);
 		setShowModal(false);
-		if (data.errors) {
+		if (data?.errors) {
 			setErrors(data.errors);
+		} else if (data) {
+			setShowModal(false);
 		}
 	};
 
