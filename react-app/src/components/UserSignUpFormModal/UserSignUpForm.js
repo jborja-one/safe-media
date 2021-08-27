@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { signUp, login } from '../../store/session';
 import { useHistory } from 'react-router';
 
@@ -14,6 +14,7 @@ const SignUpForm = ({ setShowModal }) => {
 	const user = useSelector((state) => state.session.user);
 	const dispatch = useDispatch();
 	const history = useHistory();
+	const { id } = useParams();
 
 	const onSignUp = async (e) => {
 		e.preventDefault();
@@ -27,7 +28,7 @@ const SignUpForm = ({ setShowModal }) => {
 			if (user) {
 				setShowModal(false);
 			}
-			return history.push('/users/id');
+			return history.push(`/users/${id}`);
 		}
 	};
 

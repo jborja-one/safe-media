@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createGroup } from '../../store/groups';
+import { getIcons } from '../../store/group_icons';
 
 const CreateGroup = ({ setShowModal }) => {
 	const groups = Object.values(useSelector((state) => state.groups));
+	const groupIcons = Object.values(useSelector((state) => state.groupIcons));
+
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getIcons());
+	}, [dispatch]);
 
 	const [errors, setErrors] = useState([]);
 	const [category, setCategory] = useState('');
@@ -64,10 +71,12 @@ const CreateGroup = ({ setShowModal }) => {
 						<option value='' disabled selected>
 							Select an Icon
 						</option>
-						{groups?.map((group) => {
-							<option key={group.icon.id} value='group.icon.id'>
-								{group?.icon.name}
-							</option>;
+						{groupIcons?.map((icon) => {
+							return (
+								<option key={icon.id} value={icon.img_url}>
+									{icon.name}
+								</option>
+							);
 						})}
 					</select>
 				</div>

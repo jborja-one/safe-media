@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { login } from '../../store/session';
 import { useHistory } from 'react-router';
 
@@ -11,6 +11,7 @@ const LoginForm = ({ setShowModal }) => {
 	const user = useSelector((state) => state.session.user);
 	const dispatch = useDispatch();
 	const history = useHistory();
+	const { id } = useParams();
 
 	const onLogin = async (e) => {
 		e.preventDefault();

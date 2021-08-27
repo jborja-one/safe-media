@@ -12,9 +12,9 @@ const create_group = (group) => ({
 	group,
 });
 
-const delete_group = (groupId) => ({
+const delete_group = (id) => ({
 	type: DELETE_GROUP,
-	groupId,
+	id,
 });
 
 export const getGroups = (id) => async (dispatch) => {
@@ -29,7 +29,7 @@ export const getGroups = (id) => async (dispatch) => {
 
 export const createGroup =
 	(category, categoryTitle, groupIconId, userId) => async (dispatch) => {
-		const res = await fetch('/api/groups', {
+		const res = await fetch('/api/groups/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({

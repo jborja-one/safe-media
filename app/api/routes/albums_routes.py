@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect
+from flask import Blueprint, redirect, request
 from flask_login import login_required
 from app.models.albums import Album
 from app.models.groups import Group

@@ -3,11 +3,15 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import groupReducer from './groups';
 import albumReducer from './albums';
+import getIconsReducer from './group_icons';
+import getAlbumIconsReducer from './album_icons';
 
 const rootReducer = combineReducers({
 	session: sessionReducer,
 	groups: groupReducer,
 	albums: albumReducer,
+	groupIcons: getIconsReducer,
+	albumIcons: getAlbumIconsReducer,
 });
 
 let enhancer;

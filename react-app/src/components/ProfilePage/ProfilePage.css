@@ -1,11 +1,10 @@
 .profile-page__container {
-	display: flex;
-	flex-direction: row;
+	display: block;
 }
 
 .user-info__container {
-	width: 300px;
-	height: 500px;
+	width: 97%;
+	height: 200px;
 	background-color: white;
 	display: flex;
 	justify-content: center;
@@ -18,10 +17,23 @@
 
 .group-card__container {
 	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	width: 100%;
 	margin: 30px;
 	padding: 30px;
+	box-sizing: border-box;
 }
 
 .groups-card {
 	margin: 20px;
+	/* display: flex;
+	justify-content: center; */
+	/* width: 300px;
+	height: 300px; */
+}
+
+.icon-img {
+	width: 300px;
+	border-radius: 25px;
 }

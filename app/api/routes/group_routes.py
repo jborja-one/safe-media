@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect
+from flask import Blueprint, redirect, request
 from flask_login import login_required
 from app.models.groups import Group
 from app.models.group_icons import GroupIcon
@@ -44,6 +44,12 @@ def create_group():
         )
         db.session.add(group)
         db.session.commit()
+        # icon = GroupIcon(
+        #     name=form.data['name'],
+        #     img_url=form.data['img_url']
+        # )
+        # db.session.add(icon)
+        # db.session.commit()
         return (group.to_dict())
     errors = form.errors
     return {'errors': validation_errors_to_error_messages(errors)}, 401

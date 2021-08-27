@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createAlbum } from '../../store/albums';
+import { getIcons } from '../../store/album_icons';
 
 const CreateAlbum = ({ setShowModal }) => {
 	const albums = Object.values(useSelector((state) => state.albums));
+	const albumIcons = Object.values(useSelector((state) => state.albumIcons));
+
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getIcons());
+	}, [dispatch]);
 
 	const [errors, setErrors] = useState([]);
 	const [category, setCategory] = useState('');
@@ -64,10 +71,12 @@ const CreateAlbum = ({ setShowModal }) => {
 						<option value='' disabled selected>
 							Select an Icon
 						</option>
-						{albums?.map((album) => {
-							<option key={album.id} value='album.icon.id'>
-								{album?.icon.name}
-							</option>;
+						{albumIcons?.map((icon) => {
+							return (
+								<option key={icon.id} value={icon.img_url}>
+									{icon.name}
+								</option>
+							);
 						})}
 					</select>
 				</div>
