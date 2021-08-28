@@ -7,11 +7,12 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 20px 20px;
+	/* margin: 20px 20px; */
 	background-color: white;
 	border-radius: 25px;
-	width: 97%;
+	width: 100%;
 	opacity: 0.8;
+	/* position: sticky; */
 }
 
 .navbar-logo {

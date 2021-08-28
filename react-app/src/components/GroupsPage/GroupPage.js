@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
 import { getAlbums, deleteAlbum } from '../../store/albums';
 import CreateAlbumModal from '../CreateAlbum';
+import DeleteAlbumModal from '../DeleteAlbumModal';
+import DeleteAlbum from '../DeleteAlbumModal/DeleteAlbum';
 
 const GroupPage = () => {
 	const dispatch = useDispatch();
@@ -65,9 +67,7 @@ const GroupPage = () => {
 												<div>{album?.album_title}</div>
 											</div>
 										</Link>
-										<i
-											className='far fa-trash-alt'
-											onClick={handleDelete}></i>
+										<DeleteAlbumModal />
 									</div>
 								</>
 							))}
