@@ -5,6 +5,7 @@ import { getAlbums, deleteAlbum } from '../../store/albums';
 import CreateAlbumModal from '../CreateAlbum';
 import DeleteAlbumModal from '../DeleteAlbumModal';
 import DeleteAlbum from '../DeleteAlbumModal/DeleteAlbum';
+import Footer from '../Footer/Footer';
 
 const GroupPage = () => {
 	const dispatch = useDispatch();
@@ -74,6 +75,7 @@ const GroupPage = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

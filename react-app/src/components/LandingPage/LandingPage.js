@@ -1,4 +1,5 @@
 import './LandingPage.css';
+import Footer from '../Footer/Footer';
 
 const LandingPage = () => {
 	return (
@@ -11,6 +12,10 @@ const LandingPage = () => {
 					/>
 				</div>
 				<div className='header-container'>
+					<img
+						className='footer-logo'
+						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-logo-removebg.png'
+					/>
 					<h1>Re-Take Control of your Privacy</h1>
 					<div className='block'>
 						<div className='header'>
@@ -70,6 +75,8 @@ const LandingPage = () => {
 					</div>
 				</div>
 			</div>
+
+			<Footer />
 		</>
 	);
 };

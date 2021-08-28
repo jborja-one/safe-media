@@ -1,0 +1,19 @@
+/* *Footer */
+.footer-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: rgb(142, 185, 161);
+	border-radius: 25px;
+	margin-top: 1rem;
+	margin: 10px;
+	position: 'fixed';
+	left: 0;
+	bottom: 0;
+	height: auto;
+	/* opacity: 0.8; */
+}
+
+li {
+	list-style-type: circle;
+}
