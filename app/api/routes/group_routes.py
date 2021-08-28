@@ -1,5 +1,5 @@
 from flask import Blueprint, redirect, request, session
-from flask_login import login_required
+from flask_login import login_required, current_user
 from app.models.groups import Group
 from app.models.group_icons import GroupIcon
 from app.models.user import User
@@ -39,7 +39,7 @@ def create_group():
             group_category=form.data['group_category'],
             group_title=form.data['group_title'],
             group_icon_id=form.data['group_icon_id'],
-            user_id=groups.user_id
+            user_id=current_user.id
         )
         db.session.add(group)
         db.session.commit()

@@ -43,13 +43,6 @@ export const createGroup =
 			const group = await res.json();
 			dispatch(create_group(group));
 			return group;
-		} else if (res.status < 500) {
-			const data = await res.json();
-			if (data.errors) {
-				return data;
-			}
-		} else {
-			return ['An error occurred. Please try again.'];
 		}
 	};
 export const deleteGroup = (id) => async (dispatch) => {
