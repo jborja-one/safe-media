@@ -4,6 +4,7 @@ import { Redirect, useParams, Link } from 'react-router-dom';
 import { getGroups, deleteGroup } from '../../store/groups';
 import CreateGroupModal from '../CreateGroup';
 import DeleteGroupModal from '../DeleteGroupModal';
+import Footer from '../Footer/Footer';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
@@ -75,6 +76,7 @@ const ProfilePage = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

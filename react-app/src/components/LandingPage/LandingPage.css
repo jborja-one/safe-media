@@ -34,16 +34,16 @@
 	width: 300px;
 	height: 150px;
 }
-
+/* *Feature Bar */
 .feature-bar__container {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	margin: 10px;
-	background-color: white;
+	background-color: #e98c8c;
 	padding: 12px;
 	border-radius: 25px;
-	/* width: 200px; */
+	opacity: 0.8;
 }
 
 .feature-container {
@@ -65,8 +65,5 @@
 
 h3 {
 	margin: 19px;
+	font-size: 20px;
 }
-
-/* .feature-text {
-	text-align: justify;
-} */
