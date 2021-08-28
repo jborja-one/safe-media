@@ -9,7 +9,7 @@ function CreateGroupModal() {
 	return (
 		<>
 			<div className='login-button' onClick={() => setShowModal(true)}>
-				<i class='far fa-plus-square'></i>
+				<i className='far fa-plus-square'></i>
 			</div>
 			{showModal && (
 				<Modal onClose={() => setShowModal(false)}>

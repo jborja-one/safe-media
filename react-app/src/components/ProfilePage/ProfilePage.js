@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
 import { getGroups, deleteGroup } from '../../store/groups';
 import CreateGroupModal from '../CreateGroup';
+import DeleteGroupModal from '../DeleteGroupModal';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
@@ -14,10 +15,6 @@ const ProfilePage = () => {
 	useEffect(() => {
 		dispatch(getGroups(id));
 	}, [dispatch]);
-
-	const handleDelete = (e) => {
-		dispatch(deleteGroup(id));
-	};
 
 	return (
 		<>
@@ -66,9 +63,12 @@ const ProfilePage = () => {
 												<div>{group?.group_title}</div>
 											</div>
 										</Link>
-										<i
-											className='far fa-trash-alt'
-											onClick={handleDelete}></i>
+										<div>
+											{/* <i className='far fa-trash-alt'></i> */}
+											<DeleteGroupModal
+												groupId={group.id}
+											/>
+										</div>
 									</div>
 								</>
 							))}

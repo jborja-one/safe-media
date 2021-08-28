@@ -5,21 +5,71 @@ const LandingPage = () => {
 		<>
 			<div className='home-container'>
 				<div className='header-img'>
-					<img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/collage-removebg.png' />
+					<img
+						className='main-img'
+						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/collage-removebg.png'
+					/>
 				</div>
 				<div className='header-container'>
-					<h1>Take Control of your Privacy</h1>
+					<h1>Re-Take Control of your Privacy</h1>
 					<div className='block'>
-						<div className='header-container1'>
-							<h1>No more Shady</h1>
-						</div>
-						<div className='header-container1'>
-							<h1>Privacy Policies</h1>
+						<div className='header'>
+							<p>No more Shady Privacy Policies</p>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className='feature-bar'></div>
+			<div className='feature-bar__container'>
+				<div className='feature-container'>
+					<div className='feature-title'>
+						<i className='fas fa-sync '></i>
+						<h3>Store and Sync</h3>
+					</div>
+					<div className='feature-content'>
+						<p className='feature-text'>
+							Keep all your media files secured and truly private,
+							up to date, and accessible from any deivce
+						</p>
+					</div>
+				</div>
+				<div className='feature-container'>
+					<div className='feature-title'>
+						<i className='fas fa-user-plus'></i>
+						<h3>Share</h3>
+					</div>
+					<div className='feature-content'>
+						<p className='feature-text'>
+							Truly control who sees your media. Share your files
+							with anyone, even if they don't have Safe Media
+						</p>
+					</div>
+				</div>
+				<div className='feature-container'>
+					<div className='feature-title'>
+						<i className='fas fa-user-shield'></i>
+						<h3>Stay Secure</h3>
+					</div>
+					<div className='feature-content'>
+						<p className='feature-text'>
+							Keep your files private, secure with no mysterious
+							privacy policies.
+						</p>
+					</div>
+				</div>
+				<div className='feature-container' id='feature-container__last'>
+					<div className='feature-title'>
+						<i className='fas fa-spa'></i>
+						<h3>Peace of Mind</h3>
+					</div>
+					<div className='feature-content'>
+						<p className='feature-text'>
+							Have the tranquility that Safe Media gives you True
+							Privacy. Only you control who has access to your
+							files. Enjoy!{' '}
+						</p>
+					</div>
+				</div>
+			</div>
 		</>
 	);
 };
