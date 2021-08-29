@@ -9,7 +9,7 @@ function DeleteGroupModal({ groupId }) {
 	return (
 		<>
 			<div id='delete-button' onClick={() => setShowModal(true)}>
-				<i className='far fa-trash-alt'></i>
+				<i className='far fa-trash-alt fa-md'></i>
 			</div>
 			{showModal && (
 				<Modal onClose={() => setShowModal(false)}>
