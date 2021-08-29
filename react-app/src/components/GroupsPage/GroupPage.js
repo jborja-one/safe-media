@@ -6,6 +6,7 @@ import CreateAlbumModal from '../CreateAlbum';
 import DeleteAlbumModal from '../DeleteAlbumModal';
 import DeleteAlbum from '../DeleteAlbumModal/DeleteAlbum';
 import Footer from '../Footer/Footer';
+import './GroupPage.css';
 
 const GroupPage = () => {
 	const dispatch = useDispatch();
@@ -29,6 +30,10 @@ const GroupPage = () => {
 			<div className='profile-page__container'>
 				<div className='sidebar-container'>
 					<div className='user-info__container'>
+						<img
+							className='profile-pic'
+							src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/edit-profile-pic-removebg.png'
+						/>
 						{users?.map((user) => (
 							<>
 								<div className='groups-card'>

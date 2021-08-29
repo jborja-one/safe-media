@@ -9,7 +9,10 @@ function CreateAlbumModal() {
 	return (
 		<>
 			<div className='login-button' onClick={() => setShowModal(true)}>
-				<i class='far fa-plus-square'></i>
+				<img
+					className='add-icon'
+					src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/add-item-removebg.png'
+				/>
 			</div>
 			{showModal && (
 				<Modal onClose={() => setShowModal(false)}>

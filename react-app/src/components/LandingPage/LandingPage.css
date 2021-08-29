@@ -40,7 +40,7 @@
 	flex-direction: row;
 	align-items: center;
 	margin: 10px;
-	background-color: #e98c8c;
+	background-color: white;
 	padding: 12px;
 	border-radius: 25px;
 	opacity: 0.8;
@@ -63,7 +63,8 @@
 	align-items: center;
 }
 
-h3 {
+.title {
 	margin: 19px;
 	font-size: 20px;
+	color: #5d18eb;
 }

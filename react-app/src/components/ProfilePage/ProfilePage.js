@@ -19,12 +19,13 @@ const ProfilePage = () => {
 
 	return (
 		<>
-			<div>
-				<h1>My Groups</h1>
-			</div>
 			<div className='profile-page__container'>
 				<div className='sidebar-container'>
 					<div className='user-info__container'>
+						<img
+							className='profile-pic'
+							src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/edit-profile-pic-removebg.png'
+						/>
 						{users?.map((user) => (
 							<>
 								<div className='groups-card'>
@@ -40,6 +41,9 @@ const ProfilePage = () => {
 					</div>
 				</div>
 				<div className='groups-container'>
+					<div className='page-title'>
+						<h1>My Groups</h1>
+					</div>
 					<div className='group-card__container'>
 						<CreateGroupModal />
 						{groups &&
@@ -51,7 +55,7 @@ const ProfilePage = () => {
 											to={`/groups/${group.id}`}
 											key={group.id}>
 											<div>
-												<div>
+												<div className='group-category'>
 													{group?.group_category}
 												</div>
 												<div>
@@ -61,14 +65,15 @@ const ProfilePage = () => {
 															group?.icon.img_url
 														}></img>
 												</div>
-												<div>{group?.group_title}</div>
 											</div>
 										</Link>
-										<div>
-											{/* <i className='far fa-trash-alt'></i> */}
-											<DeleteGroupModal
-												groupId={group.id}
-											/>
+										<div className='delete-and-title'>
+											<div>{group?.group_title}</div>
+											<div>
+												<DeleteGroupModal
+													groupId={group.id}
+												/>
+											</div>
 										</div>
 									</div>
 								</>
