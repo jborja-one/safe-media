@@ -24,9 +24,6 @@ const GroupPage = () => {
 
 	return (
 		<>
-			<div>
-				<h1>My Albums</h1>
-			</div>
 			<div className='profile-page__container'>
 				<div className='sidebar-container'>
 					<div className='user-info__container'>
@@ -49,6 +46,9 @@ const GroupPage = () => {
 					</div>
 				</div>
 				<div className='groups-container'>
+					<div className='page-title'>
+						<h1>My Albums</h1>
+					</div>
 					<div className='group-card__container'>
 						<CreateAlbumModal />
 						{albums &&
