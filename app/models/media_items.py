@@ -19,5 +19,6 @@ class MediaItem(db.Model):
             'id': self.id,
             'item_name': self.item_name,
             'album_id': self.album_id,
-            'user_id': self.user_id
+            'user_id': self.user_id,
+            'item_url': self.item_url
         }

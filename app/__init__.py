@@ -12,6 +12,7 @@ from .api.routes.group_routes import group_routes
 from .api.routes.albums_routes import album_routes
 from .api.routes.group_icons import group_icon_routes
 from .api.routes.album_icons import album_icon_routes
+from .api.routes.media_items_routes import media_routes
 
 from .seeds import seed_commands
 
@@ -39,6 +40,7 @@ app.register_blueprint(group_routes, url_prefix='/api/groups')
 app.register_blueprint(album_routes, url_prefix='/api/albums')
 app.register_blueprint(group_icon_routes, url_prefix='/api/group_icons')
 app.register_blueprint(album_icon_routes, url_prefix='/api/album_icons')
+app.register_blueprint(media_routes, url_prefix='/api/media')
 db.init_app(app)
 Migrate(app, db)
 

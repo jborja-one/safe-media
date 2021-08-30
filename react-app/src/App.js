@@ -6,6 +6,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import LandingPage from './components/LandingPage/LandingPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import GroupPage from './components/GroupsPage/GroupPage';
+import MediaPage from './components/MediaItems/MediaItems';
 import { authenticate } from './store/session';
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
 				</ProtectedRoute>
 				<ProtectedRoute path='/groups/:id'>
 					<GroupPage />
+				</ProtectedRoute>
+				<ProtectedRoute path='/albums/:id'>
+					<MediaPage />
 				</ProtectedRoute>
 			</Switch>
 		</BrowserRouter>

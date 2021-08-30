@@ -5,6 +5,7 @@ import groupReducer from './groups';
 import albumReducer from './albums';
 import getIconsReducer from './group_icons';
 import getAlbumIconsReducer from './album_icons';
+import mediaReducer from './media_items';
 
 const rootReducer = combineReducers({
 	session: sessionReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
 	albums: albumReducer,
 	groupIcons: getIconsReducer,
 	albumIcons: getAlbumIconsReducer,
+	media: mediaReducer,
 });
 
 let enhancer;

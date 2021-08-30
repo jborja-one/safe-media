@@ -4,24 +4,18 @@ import { Redirect, useParams, Link } from 'react-router-dom';
 import { getAlbums, deleteAlbum } from '../../store/albums';
 import CreateAlbumModal from '../CreateAlbum';
 import DeleteAlbumModal from '../DeleteAlbumModal';
-import DeleteAlbum from '../DeleteAlbumModal/DeleteAlbum';
 import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 import './GroupPage.css';
 
-const GroupPage = (group) => {
+const GroupPage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
 	const albums = Object.values(useSelector((state) => state.albums));
-	const users = Object.values(useSelector((state) => state.session));
 
 	useEffect(() => {
 		dispatch(getAlbums(id));
 	}, [dispatch]);
-
-	const handleDelete = (e) => {
-		dispatch(deleteAlbum(id));
-	};
 
 	return (
 		<>
