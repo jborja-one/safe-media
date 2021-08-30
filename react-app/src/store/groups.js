@@ -35,7 +35,7 @@ export const createGroup =
 			body: JSON.stringify({
 				group_category: category,
 				group_title: categoryTitle,
-				group_icon_id: groupIconId,
+				group_icon_id: Number(groupIconId),
 				user_id: userId,
 			}),
 		});
@@ -43,6 +43,9 @@ export const createGroup =
 			const group = await res.json();
 			dispatch(create_group(group));
 			return group;
+		} else {
+			const errors = await res.json();
+			debugger;
 		}
 	};
 

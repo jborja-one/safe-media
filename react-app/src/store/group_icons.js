@@ -15,10 +15,10 @@ export const getIcons = () => async (dispatch) => {
 	}
 };
 
-const getIconsReducer = (state = [], action) => {
+const getIconsReducer = (state = {}, action) => {
 	switch (action.type) {
 		case LOAD_ICONS: {
-			const allIcons = [...action.icons];
+			const allIcons = { ...action.icons };
 			return allIcons;
 		}
 		default:

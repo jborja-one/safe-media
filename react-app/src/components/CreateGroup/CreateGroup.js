@@ -3,8 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createGroup } from '../../store/groups';
 import { getIcons } from '../../store/group_icons';
 
+// grab session instead of groups, and session.user.id
+
 const CreateGroup = ({ setShowModal }) => {
-	const groups = Object.values(useSelector((state) => state.groups));
+	const session = useSelector((state) => state.session.user);
 	const groupIcons = Object.values(useSelector((state) => state.groupIcons));
 
 	const dispatch = useDispatch();
@@ -20,8 +22,9 @@ const CreateGroup = ({ setShowModal }) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		debugger;
 		const data = await dispatch(
-			createGroup(category, title, icon, groups.user_id)
+			createGroup(category, title, icon, session.id)
 		);
 		setShowModal(false);
 		if (data?.errors) {
@@ -75,7 +78,7 @@ const CreateGroup = ({ setShowModal }) => {
 						</option>
 						{groupIcons?.map((icon) => {
 							return (
-								<option key={icon.id} value={icon.img_url}>
+								<option key={icon.id} value={icon.id}>
 									{icon.name}
 								</option>
 							);
