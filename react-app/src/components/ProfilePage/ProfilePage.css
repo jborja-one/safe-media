@@ -2,24 +2,6 @@
 	display: flex;
 }
 
-.user-info__container {
-	width: 250px;
-	height: 800px;
-	background-color: white;
-	display: flex;
-	justify-content: start;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 25px;
-	box-shadow: 2px 2px mediumaquamarine;
-	margin: 30px;
-}
-
-.profile-pic {
-	width: 200px;
-	margin-top: 30px;
-}
-
 .page-title {
 	text-align: center;
 	border-bottom: 4px solid #5d18eb;
