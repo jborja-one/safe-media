@@ -20,7 +20,7 @@ const NavBar = () => {
 					{' '}
 				</NavLink>
 				<UserLoginModal />
-				<NavLink to='/' exact={true} activeClassName='active'>
+				<NavLink to={`/`} activeClassName='active'>
 					<img
 						className='navbar-logo'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-favicon-nobg.png'
@@ -39,7 +39,9 @@ const NavBar = () => {
 		sessionLinks = (
 			<div className='navbar-container'>
 				<LogoutButton />
-				<NavLink to='/' exact={true} activeClassName='active'>
+				<NavLink
+					to={`/users/${sessionUser?.id}`}
+					activeClassName='active'>
 					<img
 						className='navbar-logo'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-favicon-nobg.png'
