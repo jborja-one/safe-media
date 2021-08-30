@@ -2,19 +2,15 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
 import { getMedia } from '../../store/media_items';
+import CreateMediaModal from '../CreateMedia';
 import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
-import CreateAlbumModal from '../CreateAlbum';
 
 const MediaPage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
 	const albums = Object.values(useSelector((state) => state.albums));
 	const media_items = Object.values(useSelector((state) => state.media));
-
-	console.log('------------------------------------');
-	console.log(media_items, '*****from Meida Page******');
-	console.log('------------------------------------');
 
 	useEffect(() => {
 		dispatch(getMedia(id));
@@ -30,7 +26,7 @@ const MediaPage = () => {
 					</div>
 					<div className='group-card__container'>
 						{/* update with create media modal */}
-						<CreateAlbumModal />
+						<CreateMediaModal />
 						{media_items &&
 							media_items?.map((item) => (
 								<>

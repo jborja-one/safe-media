@@ -1,7 +1,13 @@
 const LOAD_MEDIA = 'media/LOAD_MEDIA';
+const CREATE_MEDIA = 'media/CREATE_MEDIA';
 
 const load_media = (media) => ({
 	type: LOAD_MEDIA,
+	media,
+});
+
+const create_media = (media) => ({
+	type: CREATE_MEDIA,
 	media,
 });
 
@@ -15,6 +21,25 @@ export const getMedia = (id) => async (dispatch) => {
 	}
 };
 
+export const createMedia =
+	(itemName, itemUrl, albumId, userId) => async (dispatch) => {
+		const res = await fetch('/api/groups/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				item_name: itemName,
+				item_url: itemUrl,
+				album_id: albumId,
+				user_id: userId,
+			}),
+		});
+		if (res.ok) {
+			const media = await res.json();
+			dispatch(create_media(media));
+			return media;
+		}
+	};
+
 const mediaReducer = (state = {}, action) => {
 	if (!action) return state;
 	switch (action.type) {
@@ -24,6 +49,13 @@ const mediaReducer = (state = {}, action) => {
 				new_state[item.id] = item;
 			});
 			return new_state;
+		case CREATE_MEDIA: {
+			const new_state = {
+				...state,
+				[action.media.id]: action.media,
+			};
+			return new_state;
+		}
 		default:
 			return state;
 	}

@@ -43,7 +43,7 @@ def create_group():
         )
         db.session.add(group)
         db.session.commit()
-        return {**group.to_dict()}
+        return {group.to_dict()}
     errors = form.errors
     return {'errors': validation_errors_to_error_messages(errors)}, 401
 

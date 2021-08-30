@@ -33,10 +33,10 @@ export const createGroup =
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
-				category_id: category,
-				category_title: categoryTitle,
+				group_category: category,
+				group_title: categoryTitle,
 				group_icon_id: groupIconId,
-				user_id: +userId,
+				user_id: userId,
 			}),
 		});
 		if (res.ok) {
@@ -45,6 +45,7 @@ export const createGroup =
 			return group;
 		}
 	};
+
 export const deleteGroup = (id) => async (dispatch) => {
 	const deleted = await fetch(`/api/groups/${id}`, {
 		method: 'DELETE',
@@ -63,6 +64,13 @@ const groupReducer = (state = {}, action) => {
 			action.groups.forEach((group) => {
 				new_state[group.id] = group;
 			});
+			return new_state;
+		}
+		case CREATE_GROUP: {
+			const new_state = {
+				...state,
+				[action.group.id]: action.group,
+			};
 			return new_state;
 		}
 		case DELETE_GROUP: {

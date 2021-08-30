@@ -17,7 +17,7 @@ def seed_group_icons():
         img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/friends-group-icon.png')
     school = GroupIcon(
         id=4,
-        name='Friends',
+        name='School',
         img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/school-group-icon.png')
 
     db.session.add(family)
