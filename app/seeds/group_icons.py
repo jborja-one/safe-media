@@ -6,19 +6,24 @@ def seed_group_icons():
     family = GroupIcon(
         id=1,
         name='Family',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/family.png')
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/family-group-icon.png')
     work = GroupIcon(
         id=2,
         name='Work',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/work.png')
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/work-group-icon.png')
     friends = GroupIcon(
         id=3,
         name='Friends',
-        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/friends.png')
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/friends-group-icon.png')
+    school = GroupIcon(
+        id=4,
+        name='Friends',
+        img_url='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Icons/group_icons/school-group-icon.png')
 
     db.session.add(family)
     db.session.add(work)
     db.session.add(friends)
+    db.session.add(school)
 
     db.session.commit()
 

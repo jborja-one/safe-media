@@ -5,16 +5,19 @@ from app.models import db, User
 def seed_users():
     demo = User(
         email='demo@aa.io',
+        profile_img='https://safemedia-capstone.s3.us-east-2.amazonaws.com/media_items/Profile+Pictures/195136_1684899921290_3431314_o.jpeg',
         first_name='Demo',
         last_name='Litious',
         password='password')
     admin = User(
         email='admin@aa.io',
+        profile_img='',
         first_name='Admin',
         last_name='Media',
         password='password')
     jonathan = User(
         email='jonathan@aa.io',
+        profile_img='',
         first_name='Jonathan',
         last_name='Borja',
         password='password')
