@@ -132,7 +132,10 @@ const SignUpForm = ({ setShowModal }) => {
 				<div className='demo-login-container'>
 					<p className='demo-text'>
 						To Safe Media Demo,{' '}
-						<a className='demo-click-here' onClick={demoLogin}>
+						<a
+							href=''
+							className='demo-click-here'
+							onClick={demoLogin}>
 							Click Here
 						</a>
 					</p>
