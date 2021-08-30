@@ -201,6 +201,6 @@ def seed_media_items():
 # TRUNCATE Removes all the data from the table, and RESET IDENTITY
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
-def undo_group_icons():
+def undo_media_items():
     db.session.execute('TRUNCATE media_items RESTART IDENTITY CASCADE;')
     db.session.commit()

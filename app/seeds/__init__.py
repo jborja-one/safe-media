@@ -4,6 +4,7 @@ from .groups import seed_groups, undo_groups
 from .albums import seed_albums, undo_albums
 from .album_icons import seed_album_icons, undo_album_icons
 from .group_icons import seed_group_icons, undo_group_icons
+from .media_items import seed_media_items, undo_media_items
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -18,6 +19,8 @@ def seed():
     seed_group_icons()
     seed_groups()
     seed_albums()
+    seed_media_items()
+
     # Add other seed functions here
 
 
@@ -29,4 +32,5 @@ def undo():
     undo_group_icons()
     undo_groups()
     undo_albums()
+    undo_media_items()
     # Add other undo functions here
