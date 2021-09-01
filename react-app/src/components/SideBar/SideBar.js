@@ -43,15 +43,27 @@ const SideBar = () => {
 														{group?.group_title}
 													</p>
 												</div>
-												<div>
+												<div className='active-icon-img'>
 													{icons &&
 														icons?.map((icon) => {
-															<img
-																key={icon.id}
-																className='icon-img'
-																src={
-																	icon?.img_url
-																}></img>;
+															return (
+																<div
+																	key={
+																		icon.id
+																	}>
+																	{group.group_icon_id ===
+																	icon.id ? (
+																		<img
+																			key={
+																				icon.id
+																			}
+																			className='icon-img'
+																			src={
+																				icon?.img_url
+																			}></img>
+																	) : null}
+																</div>
+															);
 														})}
 												</div>
 											</Link>

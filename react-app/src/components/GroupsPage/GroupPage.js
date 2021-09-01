@@ -11,7 +11,9 @@ import './GroupPage.css';
 const GroupPage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
+
 	const albums = Object.values(useSelector((state) => state.albums));
+	const icons = Object.values(useSelector((state) => state.albumIcons));
 
 	useEffect(() => {
 		dispatch(getAlbums(id));
@@ -26,7 +28,7 @@ const GroupPage = () => {
 						<h1>My Albums</h1>
 					</div>
 					<div className='group-card__container'>
-						<CreateAlbumModal />
+						<CreateAlbumModal props={{ id }} />
 						{albums &&
 							albums?.map((album) => (
 								<>
@@ -40,16 +42,31 @@ const GroupPage = () => {
 													{album?.album_category}
 												</div>
 												<div>
-													<img
-														className='icon-img'
-														src={
-															album?.icon.img_url
-														}></img>
+													{icons &&
+														icons?.map((icon) => {
+															return (
+																<div
+																	key={
+																		icon.id
+																	}>
+																	{album.album_icon_id ===
+																	icon.id ? (
+																		<img
+																			className='icon-img'
+																			src={
+																				icon.img_url
+																			}></img>
+																	) : null}
+																</div>
+															);
+														})}
 												</div>
 												<div>{album?.album_title}</div>
 											</div>
 										</Link>
-										<DeleteAlbumModal />
+										<DeleteAlbumModal
+											albumId={{ albumId: album.id }}
+										/>
 									</div>
 								</>
 							))}

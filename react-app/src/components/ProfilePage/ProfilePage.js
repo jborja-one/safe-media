@@ -12,19 +12,11 @@ const ProfilePage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
 	const groups = Object.values(useSelector((state) => state.groups));
-	const icons = useSelector((state) => state.groupIcons);
-
-	// const iconUrl = groups.map((group) => {
-	// 	if (group.group_icon_id === icons.id) {
-	// 		return icons.img_url;
-	// 	}
-	// });
+	const icons = Object.values(useSelector((state) => state.groupIcons));
 
 	useEffect(() => {
 		dispatch(getGroups(id));
 	}, [dispatch]);
-
-	// debugger;
 
 	return (
 		<>
@@ -49,11 +41,24 @@ const ProfilePage = () => {
 													{group?.group_category}
 												</div>
 												<div>
-													<img
-														className='icon-img'
-														src={
-															group.group_icon_id
-														}></img>
+													{icons &&
+														icons?.map((icon) => {
+															return (
+																<div
+																	key={
+																		icon.id
+																	}>
+																	{group.group_icon_id ===
+																	icon.id ? (
+																		<img
+																			className='icon-img'
+																			src={
+																				icon.img_url
+																			}></img>
+																	) : null}
+																</div>
+															);
+														})}
 												</div>
 											</div>
 										</Link>
@@ -61,7 +66,7 @@ const ProfilePage = () => {
 											<div>{group?.group_title}</div>
 											<div>
 												<DeleteGroupModal
-													groupId={groups.id}
+													groupId={group.id}
 												/>
 											</div>
 										</div>

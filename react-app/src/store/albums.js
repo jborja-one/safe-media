@@ -1,4 +1,4 @@
-const LOAD_ALBUMS = 'albums/LOAD_ALBUMS';
+export const LOAD_ALBUMS = 'albums/LOAD_ALBUMS';
 const CREATE_ALBUMS = 'albums/CREATE_ALBUMS';
 const DELETE_ALBUMS = 'albums/DELETE_ALBUMS';
 
@@ -22,27 +22,30 @@ export const getAlbums = (id) => async (dispatch) => {
 
 	if (res.ok) {
 		const albums = await res.json();
-		dispatch(load_albums(albums.albums));
+		dispatch(load_albums(albums));
 		return res;
 	}
 };
 
 export const createAlbum =
 	(category, categoryTitle, albumIconId, groupId) => async (dispatch) => {
-		const res = await fetch('/api/albums', {
+		const res = await fetch(`/api/albums/${groupId}`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
-				category_id: category,
-				category_title: categoryTitle,
-				album_icon_id: albumIconId,
-				group_id: groupId,
+				album_category: category,
+				album_title: categoryTitle,
+				album_icon_id: Number(albumIconId),
 			}),
 		});
-		const album = await res.json();
+		// debugger;
 		if (res.ok) {
+			const album = await res.json();
 			dispatch(create_album(album));
+
 			return album;
+		} else {
+			const errors = await res.json();
 		}
 	};
 
@@ -60,10 +63,15 @@ const albumReducer = (state = {}, action) => {
 	if (!action) return state;
 	switch (action.type) {
 		case LOAD_ALBUMS: {
-			const new_state = {};
-			action.albums.forEach((album) => {
-				new_state[album.id] = album;
-			});
+			const { albums } = action.albums;
+			return { ...state, ...albums };
+		}
+		case CREATE_ALBUMS: {
+			return { ...state, albums: action.albums };
+		}
+		case DELETE_ALBUMS: {
+			const new_state = { ...state };
+			delete new_state[action.albumId];
 			return new_state;
 		}
 		default:
