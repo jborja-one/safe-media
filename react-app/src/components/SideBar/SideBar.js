@@ -6,6 +6,7 @@ import './SideBar.css';
 const SideBar = () => {
 	const users = Object.values(useSelector((state) => state.session));
 	const groups = Object.values(useSelector((state) => state.groups));
+	const icons = Object.values(useSelector((state) => state.groupIcons));
 
 	return (
 		<>
@@ -43,11 +44,15 @@ const SideBar = () => {
 													</p>
 												</div>
 												<div>
-													<img
-														className='active-icon-img'
-														src={
-															group?.icon.img_url
-														}></img>
+													{icons &&
+														icons?.map((icon) => {
+															<img
+																key={icon.id}
+																className='icon-img'
+																src={
+																	icon?.img_url
+																}></img>;
+														})}
 												</div>
 											</Link>
 										</div>

@@ -20,14 +20,21 @@ def validation_errors_to_error_messages(validation_errors):
     return errorMessages
 
 
-@group_routes.route('/<int:id>')
-def get_groups(id):
-    groups_query = Group.query.filter(Group.user_id == id).all()
-    groups = [group.to_dict() for group in groups_query]
+@group_routes.route('/<int:user_id>')
+def get_groups(user_id):
+    # groups_query = Group.query.filter(Group.user_id == id).all()
+    # groups = [group.to_dict() for group in groups_query]
+    # for group in groups:
+    #     group['icon'] = GroupIcon.query.get(group['group_icon_id']).to_dict()
+    #     group['user'] = User.query.get(group['user_id']).to_dict()
+    # return {'groups': groups}
+
+    groups = Group.query.filter(Group.user_id == user_id).all()
+    new_dict = {'groups': {}, 'icons': {}}
     for group in groups:
-        group['icon'] = GroupIcon.query.get(group['group_icon_id']).to_dict()
-        group['user'] = User.query.get(group['user_id']).to_dict()
-    return {'groups': groups}
+        new_dict['groups'][group.id] = group.to_dict()
+        new_dict['icons'][group.icon.id] = group.icon.to_dict()
+    return new_dict
 
 
 @group_routes.route('/', methods=['POST'])
