@@ -1,4 +1,4 @@
-const LOAD_GROUPS = 'groups/LOAD_GROUPS';
+export const LOAD_GROUPS = 'groups/LOAD_GROUPS';
 const DELETE_GROUP = 'groups/DELETE_GROUP';
 const CREATE_GROUP = 'groups/CREATE_GROUP';
 
@@ -22,7 +22,8 @@ export const getGroups = (id) => async (dispatch) => {
 
 	if (res.ok) {
 		const groups = await res.json();
-		dispatch(load_groups(groups.groups));
+		// debugger;
+		dispatch(load_groups(groups));
 		return res;
 	}
 };
@@ -35,7 +36,7 @@ export const createGroup =
 			body: JSON.stringify({
 				group_category: category,
 				group_title: categoryTitle,
-				group_icon_id: groupIconId,
+				group_icon_id: Number(groupIconId),
 				user_id: userId,
 			}),
 		});
@@ -43,6 +44,9 @@ export const createGroup =
 			const group = await res.json();
 			dispatch(create_group(group));
 			return group;
+		} else {
+			const errors = await res.json();
+			// debugger;
 		}
 	};
 
@@ -60,11 +64,8 @@ const groupReducer = (state = {}, action) => {
 	if (!action) return state;
 	switch (action.type) {
 		case LOAD_GROUPS: {
-			const new_state = {};
-			action.groups.forEach((group) => {
-				new_state[group.id] = group;
-			});
-			return new_state;
+			const { groups } = action.groups;
+			return { ...state, ...groups };
 		}
 		case CREATE_GROUP: {
 			const new_state = {

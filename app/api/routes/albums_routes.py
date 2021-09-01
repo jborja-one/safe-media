@@ -26,10 +26,11 @@ def validation_errors_to_error_messages(validation_errors):
 def get_albums(id):
     album_query = Album.query.filter(Album.group_id == id).all()
     albums = [album.to_dict() for album in album_query]
+    # group = Group.query.all()
     for album in albums:
         album['icon'] = AlbumIcon.query.get(album['album_icon_id']).to_dict()
         album['group'] = Group.query.get(album['album_icon_id']).to_dict()
-        # album['user'] = User.query.get(album['user_id']).to_dict()
+
     return{'albums': albums}
 
 

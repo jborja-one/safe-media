@@ -1,3 +1,4 @@
+import { LOAD_GROUPS } from './groups';
 const LOAD_ICONS = 'icons/LOAD_ICONS';
 
 const loadIcons = (icons) => ({
@@ -15,11 +16,15 @@ export const getIcons = () => async (dispatch) => {
 	}
 };
 
-const getIconsReducer = (state = [], action) => {
+const getIconsReducer = (state = {}, action) => {
 	switch (action.type) {
 		case LOAD_ICONS: {
-			const allIcons = [...action.icons];
+			const allIcons = { ...state, ...action.icons };
 			return allIcons;
+		}
+		case LOAD_GROUPS: {
+			const { icons } = action.groups;
+			return { ...state, ...icons };
 		}
 		default:
 			return state;
