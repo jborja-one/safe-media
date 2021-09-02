@@ -5,14 +5,14 @@ import { createMedia } from '../../store/media_items';
 const CreateMedia = ({ setShowModal }) => {
 	const groups = Object.values(useSelector((state) => state.groups));
 	const albums = Object.values(useSelector((state) => state.albums));
-	const media_items = Object.values(useSelector((state) => state.media));
+	const session = useSelector((state) => state.session.user);
 
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(createMedia());
 	}, [dispatch]);
-
+	// debugger;
 	const [errors, setErrors] = useState([]);
 	const [itemName, setItemName] = useState('');
 	const [itemUrl, setItemUrl] = useState('');
@@ -20,7 +20,7 @@ const CreateMedia = ({ setShowModal }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const data = await dispatch(
-			createMedia(itemName, itemUrl, albums.id, groups.user_id)
+			createMedia(itemName, itemUrl, albums.id, session.id)
 		);
 		setShowModal(false);
 		if (data?.errors) {

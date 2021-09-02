@@ -1,3 +1,4 @@
+import { LOAD_GROUPS } from './groups';
 export const LOAD_ALBUMS = 'albums/LOAD_ALBUMS';
 const CREATE_ALBUMS = 'albums/CREATE_ALBUMS';
 const DELETE_ALBUMS = 'albums/DELETE_ALBUMS';
@@ -65,6 +66,10 @@ const albumReducer = (state = {}, action) => {
 		case LOAD_ALBUMS: {
 			const { albums } = action.albums;
 			return { ...state, ...albums };
+		}
+		case LOAD_GROUPS: {
+			const { groups } = action.groups;
+			return { ...state, ...groups };
 		}
 		case CREATE_ALBUMS: {
 			return { ...state, albums: action.albums };

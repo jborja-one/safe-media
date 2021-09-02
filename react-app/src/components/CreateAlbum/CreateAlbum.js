@@ -25,7 +25,6 @@ const CreateAlbum = ({ setShowModal }) => {
 		const data = await dispatch(
 			createAlbum(category, title, icon, albums[0].group_id)
 		);
-		console.log(albums[0].group_id, ')()((((((((');
 		setShowModal(false);
 		if (data?.errors) {
 			setErrors(data.errors);

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
-import { getAlbums, deleteAlbum } from '../../store/albums';
+import { getAlbums } from '../../store/albums';
+import { getGroups } from '../../store/groups';
 import CreateAlbumModal from '../CreateAlbum';
 import DeleteAlbumModal from '../DeleteAlbumModal';
 import SideBar from '../SideBar/SideBar';
@@ -14,6 +15,7 @@ const GroupPage = () => {
 
 	const albums = Object.values(useSelector((state) => state.albums));
 	const icons = Object.values(useSelector((state) => state.albumIcons));
+	const groups = Object.values(useSelector((state) => state.groups));
 
 	useEffect(() => {
 		dispatch(getAlbums(id));
@@ -32,7 +34,7 @@ const GroupPage = () => {
 						{albums &&
 							albums?.map((album) => (
 								<>
-									<div className='groups-card'>
+									<div key={album.id} className='groups-card'>
 										<Link
 											className='card-link'
 											to={`/albums/${album.id}`}
@@ -64,9 +66,7 @@ const GroupPage = () => {
 												<div>{album?.album_title}</div>
 											</div>
 										</Link>
-										<DeleteAlbumModal
-											albumId={{ albumId: album.id }}
-										/>
+										<DeleteAlbumModal albumId={album.id} />
 									</div>
 								</>
 							))}
