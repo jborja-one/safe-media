@@ -25,6 +25,7 @@ const CreateMedia = ({ setShowModal }) => {
 		const data = await dispatch(
 			createMedia(itemName, itemUrl, id, session.id)
 		);
+		console.log(data, 'data from CreateMedia*****');
 		setShowModal(false);
 		if (data?.errors) {
 			setErrors(data.errors);

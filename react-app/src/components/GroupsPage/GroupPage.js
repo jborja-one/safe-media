@@ -69,10 +69,6 @@ const GroupPage = () => {
 											<DeleteAlbumModal
 												albumId={album.id}
 											/>
-											{console.log(
-												album.id,
-												'******from group page********'
-											)}
 										</div>
 									</div>
 								</>

@@ -29,6 +29,7 @@ export const getMedia = (id) => async (dispatch) => {
 
 export const createMedia =
 	(itemName, itemUrl, albumId, userId) => async (dispatch) => {
+		console.log(itemName, '***from thunk****');
 		const res = await fetch(`/api/media/${userId}`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -41,12 +42,14 @@ export const createMedia =
 		});
 		if (res.ok) {
 			const media = await res.json();
+			console.log(media, 'media from thunk******');
 			dispatch(create_media(media));
 			return media;
 		}
 	};
 
 export const deleteMedia = (mediaItemId) => async (dispatch) => {
+	// debugger;
 	const deleted = await fetch(`/api/media/${mediaItemId}`, {
 		method: 'DELETE',
 	});
