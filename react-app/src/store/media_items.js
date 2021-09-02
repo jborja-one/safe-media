@@ -37,19 +37,16 @@ export const createMedia =
 				item_name: itemName,
 				item_url: itemUrl,
 				album_id: Number(albumId),
-				// user_id: userId,
 			}),
 		});
 		if (res.ok) {
 			const media = await res.json();
-			console.log(media, 'media from thunk******');
 			dispatch(create_media(media));
 			return media;
 		}
 	};
 
 export const deleteMedia = (mediaItemId) => async (dispatch) => {
-	// debugger;
 	const deleted = await fetch(`/api/media/${mediaItemId}`, {
 		method: 'DELETE',
 	});

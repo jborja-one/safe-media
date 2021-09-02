@@ -29,6 +29,7 @@ const MediaPage = () => {
 						{media_items &&
 							media_items?.map((item) => (
 								<>
+									{/* {console.log(item.id, '############')} */}
 									<div className='groups-card'>
 										<div>
 											<div>
@@ -38,7 +39,9 @@ const MediaPage = () => {
 											</div>
 											<div className='delete-and-title'>
 												{item?.item_name}
-												<DeleteMediaModal />
+												<DeleteMediaModal
+													mediaItemId={item?.id}
+												/>
 											</div>
 										</div>
 									</div>

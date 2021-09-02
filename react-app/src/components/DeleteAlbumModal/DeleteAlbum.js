@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 
 import { deleteAlbum } from '../../store/albums';
 import './DeleteAlbum.css';
-// import DeleteGroupModal from '.';
 
 function DeleteAlbum({ albumId, setShowModal }) {
-	console.log('------------------------------------');
-	console.log(albumId, '****from DeleteAlbum ********');
-	console.log('------------------------------------');
 	const dispatch = useDispatch();
 	const history = useHistory();
 
 	const handleDelete = (e) => {
 		const success = dispatch(deleteAlbum(albumId));
-		// debugger;
-		console.log('------------------------------------');
-		console.log(albumId, '&&&&&&&&&&&&');
-		console.log('------------------------------------');
+
 		if (success) {
 			e.preventDefault();
 			setShowModal(false);

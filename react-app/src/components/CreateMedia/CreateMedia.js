@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { createMedia } from '../../store/media_items';
 
 const CreateMedia = ({ setShowModal }) => {
@@ -9,6 +9,7 @@ const CreateMedia = ({ setShowModal }) => {
 	const session = useSelector((state) => state.session.user);
 	const { id } = useParams();
 	const dispatch = useDispatch();
+	const history = useHistory();
 	// debugger;
 
 	// useEffect(() => {
@@ -25,8 +26,9 @@ const CreateMedia = ({ setShowModal }) => {
 		const data = await dispatch(
 			createMedia(itemName, itemUrl, id, session.id)
 		);
-		console.log(data, 'data from CreateMedia*****');
+
 		setShowModal(false);
+		history.go(0);
 		if (data?.errors) {
 			setErrors(data.errors);
 		} else if (data) {

@@ -56,9 +56,9 @@ def create_media(id):
     return {'errors': validation_errors_to_error_messages(errors)}, 401
 
 
-@media_routes.route('/<int:mediaItemId>', methods=['DELETE'])
-def delete_media(mediaItemId):
-    media_item = MediaItem.query.get(mediaItemId)
+@media_routes.route('/<int:id>', methods=['DELETE'])
+def delete_media(id):
+    media_item = MediaItem.query.get(id)
     db.session.delete(media_item)
     db.session.commit()
     return{'message': 'Delete Success'}, 204
