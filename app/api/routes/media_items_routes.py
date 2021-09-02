@@ -1,9 +1,10 @@
 from flask import Blueprint, redirect, request, session
-from flask_login import login_required
+from flask_login import login_required, current_user
 from app.models.albums import Album
 from app.models.user import User
 from app.models.media_items import MediaItem
 from app.forms.create_media import CreateMedia
+from app.models import db
 
 media_routes = Blueprint('media', __name__)
 
@@ -40,7 +41,7 @@ def get_media(album_id):
 def create_media(id):
     form = CreateMedia()
     form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
+    if not form.validate_on_submit():
         mediaItem = MediaItem(
             item_name=form.data['item_name'],
             item_url=form.data['item_url'],
@@ -52,3 +53,11 @@ def create_media(id):
         return mediaItem.to_dict()
     errors = form.errors
     return {'errors': validation_errors_to_error_messages(errors)}, 401
+
+
+@media_routes.route('/<int:id>', methods=['POST'])
+def delete_media(id):
+    media_item = MediaItem.query.get(id)
+    db.session.delete(media_item)
+    db.session.commit()
+    return{'message': 'Delete Success'}, 204
