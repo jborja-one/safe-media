@@ -6,12 +6,14 @@ import { getIcons } from '../../store/album_icons';
 const CreateAlbum = ({ setShowModal }) => {
 	const albums = Object.values(useSelector((state) => state.albums));
 	const albumIcons = Object.values(useSelector((state) => state.albumIcons));
+	const groups = Object.values(useSelector((state) => state.groups));
 
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getIcons());
 	}, [dispatch]);
+	// debugger;
 
 	const [errors, setErrors] = useState([]);
 	const [category, setCategory] = useState('');
@@ -21,11 +23,13 @@ const CreateAlbum = ({ setShowModal }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const data = await dispatch(
-			createAlbum(category, title, icon, albums.group_id)
+			createAlbum(category, title, icon, albums[0].group_id)
 		);
 		setShowModal(false);
-		if (data.errors) {
+		if (data?.errors) {
 			setErrors(data.errors);
+		} else if (data) {
+			setShowModal(false);
 		}
 	};
 
@@ -73,7 +77,7 @@ const CreateAlbum = ({ setShowModal }) => {
 						</option>
 						{albumIcons?.map((icon) => {
 							return (
-								<option key={icon.id} value={icon.img_url}>
+								<option key={icon.id} value={icon.id}>
 									{icon.name}
 								</option>
 							);

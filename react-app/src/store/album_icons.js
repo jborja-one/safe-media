@@ -1,3 +1,4 @@
+import { LOAD_ALBUMS } from './albums';
 const LOAD_ALBUM_ICONS = 'icons/LOAD_ALBUM_ICONS';
 
 const loadAlbumIcons = (icons) => ({
@@ -20,6 +21,10 @@ const getAlbumIconsReducer = (state = [], action) => {
 		case LOAD_ALBUM_ICONS: {
 			const allIcons = [...action.icons];
 			return allIcons;
+		}
+		case LOAD_ALBUMS: {
+			const { icons } = action.albums;
+			return { ...state, ...icons };
 		}
 		default:
 			return state;

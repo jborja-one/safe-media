@@ -1,12 +1,20 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { getGroups } from '../../store/groups';
 import './SideBar.css';
 
 const SideBar = () => {
 	const users = Object.values(useSelector((state) => state.session));
 	const groups = Object.values(useSelector((state) => state.groups));
 	const icons = Object.values(useSelector((state) => state.groupIcons));
+
+	const dispatch = useDispatch();
+	const { id } = useParams();
+
+	useEffect(() => {
+		dispatch(getGroups(id));
+	}, [dispatch]);
 
 	return (
 		<>
@@ -43,15 +51,27 @@ const SideBar = () => {
 														{group?.group_title}
 													</p>
 												</div>
-												<div>
+												<div className='active-icon-img'>
 													{icons &&
 														icons?.map((icon) => {
-															<img
-																key={icon.id}
-																className='icon-img'
-																src={
-																	icon?.img_url
-																}></img>;
+															return (
+																<div
+																	key={
+																		icon.id
+																	}>
+																	{group.group_icon_id ===
+																	icon.id ? (
+																		<img
+																			key={
+																				icon.id
+																			}
+																			className='icon-img'
+																			src={
+																				icon?.img_url
+																			}></img>
+																	) : null}
+																</div>
+															);
 														})}
 												</div>
 											</Link>

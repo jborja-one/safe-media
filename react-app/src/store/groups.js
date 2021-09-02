@@ -22,7 +22,6 @@ export const getGroups = (id) => async (dispatch) => {
 
 	if (res.ok) {
 		const groups = await res.json();
-		// debugger;
 		dispatch(load_groups(groups));
 		return res;
 	}

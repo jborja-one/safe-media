@@ -22,7 +22,6 @@ const CreateGroup = ({ setShowModal }) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// debugger;
 		const data = await dispatch(
 			createGroup(category, title, icon, session.id)
 		);

@@ -16,6 +16,8 @@ const MediaPage = () => {
 		dispatch(getMedia(id));
 	}, [dispatch]);
 
+	// debugger;
+
 	return (
 		<>
 			<div className='profile-page__container'>
@@ -32,16 +34,11 @@ const MediaPage = () => {
 								<>
 									<div className='groups-card'>
 										<div>
-											<div>
-												{item?.media_items.item_name}
-											</div>
+											<div>{item?.item_name}</div>
 											<div>
 												<img
 													className='icon-img'
-													src={
-														item?.media_items
-															.item_url
-													}></img>
+													src={item?.item_url}></img>
 											</div>
 										</div>
 

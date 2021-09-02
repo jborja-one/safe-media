@@ -18,7 +18,7 @@ function DeleteGroup({ groupId, setShowModal }) {
 		if (success) {
 			e.preventDefault();
 			setShowModal(false);
-			// return <Redirect to={``} />;
+			history.go(0);
 		} else {
 			alert('Please try again');
 		}

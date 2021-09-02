@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
-import { getAlbums, deleteAlbum } from '../../store/albums';
+import { getAlbums } from '../../store/albums';
+import { getGroups } from '../../store/groups';
 import CreateAlbumModal from '../CreateAlbum';
 import DeleteAlbumModal from '../DeleteAlbumModal';
 import SideBar from '../SideBar/SideBar';
@@ -11,7 +12,10 @@ import './GroupPage.css';
 const GroupPage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
+
 	const albums = Object.values(useSelector((state) => state.albums));
+	const icons = Object.values(useSelector((state) => state.albumIcons));
+	const groups = Object.values(useSelector((state) => state.groups));
 
 	useEffect(() => {
 		dispatch(getAlbums(id));
@@ -26,11 +30,11 @@ const GroupPage = () => {
 						<h1>My Albums</h1>
 					</div>
 					<div className='group-card__container'>
-						<CreateAlbumModal />
+						<CreateAlbumModal props={{ id }} />
 						{albums &&
 							albums?.map((album) => (
 								<>
-									<div className='groups-card'>
+									<div key={album.id} className='groups-card'>
 										<Link
 											className='card-link'
 											to={`/albums/${album.id}`}
@@ -40,16 +44,29 @@ const GroupPage = () => {
 													{album?.album_category}
 												</div>
 												<div>
-													<img
-														className='icon-img'
-														src={
-															album?.icon.img_url
-														}></img>
+													{icons &&
+														icons?.map((icon) => {
+															return (
+																<div
+																	key={
+																		icon.id
+																	}>
+																	{album.album_icon_id ===
+																	icon.id ? (
+																		<img
+																			className='icon-img'
+																			src={
+																				icon.img_url
+																			}></img>
+																	) : null}
+																</div>
+															);
+														})}
 												</div>
 												<div>{album?.album_title}</div>
 											</div>
 										</Link>
-										<DeleteAlbumModal />
+										<DeleteAlbumModal albumId={album.id} />
 									</div>
 								</>
 							))}
