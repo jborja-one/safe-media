@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getMedia } from '../../store/media_items';
 import CreateMediaModal from '../CreateMedia';
+import DeleteMediaModal from '../DeleteMediaModal';
 import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 
@@ -18,7 +19,7 @@ const MediaPage = () => {
 	return (
 		<>
 			<div className='profile-page__container'>
-				<SideBar />
+				{/* <SideBar /> */}
 				<div className='groups-container'>
 					<div className='page-title'>
 						<h1>My Safe Media</h1>
@@ -30,15 +31,16 @@ const MediaPage = () => {
 								<>
 									<div className='groups-card'>
 										<div>
-											<div>{item?.item_name}</div>
 											<div>
 												<img
 													className='icon-img'
 													src={item?.item_url}></img>
 											</div>
+											<div className='delete-and-title'>
+												{item?.item_name}
+												<DeleteMediaModal />
+											</div>
 										</div>
-
-										{/* <DeleteAlbumModal /> */}
 									</div>
 								</>
 							))}

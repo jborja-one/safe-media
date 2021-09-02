@@ -23,7 +23,7 @@ const GroupPage = () => {
 	return (
 		<>
 			<div className='profile-page__container'>
-				<SideBar />
+				{/* <SideBar /> */}
 				<div className='groups-container'>
 					<div className='page-title'>
 						<h1>My Albums</h1>
@@ -69,10 +69,6 @@ const GroupPage = () => {
 											<DeleteAlbumModal
 												albumId={album.id}
 											/>
-											{console.log(
-												album.id,
-												'******from group page********'
-											)}
 										</div>
 									</div>
 								</>
