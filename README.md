@@ -2,7 +2,7 @@
 <br />
 
 <p align='center'>
-  <img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-logo.png' width='500px' >
+  <img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-logo-removebg.png' >
 </p>
 
 SAfe MEdia, is a web app where users are able to store, share their online media with a peace of mind that their information is truly secure and private. They will be able to have complete control over who is allowed to view their content, with permissions and authorizations per each user that is invited to see content in our site.
