@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 
 import { deleteMedia } from '../../store/media_items';
 import './DeleteMedia.css';
-// import DeleteGroupModal from '.';
 
 function DeleteMedia({ mediaItemId, setShowModal }) {
 	const dispatch = useDispatch();
-	const history = useHistory();
 
 	const handleDelete = (e) => {
 		const success = dispatch(deleteMedia(mediaItemId));
 		if (success) {
 			e.preventDefault();
 			setShowModal(false);
-			history.go(0);
 		} else {
 			alert('Please try again');
 		}
