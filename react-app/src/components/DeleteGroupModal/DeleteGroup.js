@@ -11,7 +11,6 @@ import './DeleteGroup.css';
 function DeleteGroup({ groupId, setShowModal }) {
 	const history = useHistory();
 	const dispatch = useDispatch();
-	const { id } = useParams();
 
 	const handleDelete = (e) => {
 		const success = dispatch(deleteGroup(groupId));

@@ -9,17 +9,22 @@ import './DeleteAlbum.css';
 // import DeleteGroupModal from '.';
 
 function DeleteAlbum({ albumId, setShowModal }) {
+	console.log('------------------------------------');
+	console.log(albumId, '****from DeleteAlbum ********');
+	console.log('------------------------------------');
 	const dispatch = useDispatch();
-	const { id } = useParams();
+	const history = useHistory();
 
 	const handleDelete = (e) => {
 		const success = dispatch(deleteAlbum(albumId));
+		// debugger;
 		console.log('------------------------------------');
 		console.log(albumId, '&&&&&&&&&&&&');
 		console.log('------------------------------------');
 		if (success) {
 			e.preventDefault();
 			setShowModal(false);
+			history.go(0);
 		} else {
 			alert('Please try again');
 		}

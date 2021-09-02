@@ -3,7 +3,7 @@ import { Modal } from '../../context/Modal';
 import DeleteAlbum from './DeleteAlbum';
 import './DeleteAlbum.css';
 
-function DeleteAlbumModal({ groupId }) {
+function DeleteAlbumModal({ albumId }) {
 	const [showModal, setShowModal] = useState(false);
 
 	return (
@@ -14,7 +14,7 @@ function DeleteAlbumModal({ groupId }) {
 			{showModal && (
 				<Modal onClose={() => setShowModal(false)}>
 					<DeleteAlbum
-						groupId={groupId}
+						albumId={albumId}
 						setShowModal={setShowModal}
 					/>
 				</Modal>

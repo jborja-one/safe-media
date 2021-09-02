@@ -12,10 +12,9 @@ import './GroupPage.css';
 const GroupPage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
-
 	const albums = Object.values(useSelector((state) => state.albums));
 	const icons = Object.values(useSelector((state) => state.albumIcons));
-	const groups = Object.values(useSelector((state) => state.groups));
+	// const groups = Object.values(useSelector((state) => state.groups));
 
 	useEffect(() => {
 		dispatch(getAlbums(id));
@@ -63,10 +62,18 @@ const GroupPage = () => {
 															);
 														})}
 												</div>
-												<div>{album?.album_title}</div>
 											</div>
 										</Link>
-										<DeleteAlbumModal albumId={album.id} />
+										<div className='delete-and-title'>
+											<div>{album?.album_title}</div>
+											<DeleteAlbumModal
+												albumId={album.id}
+											/>
+											{console.log(
+												album.id,
+												'******from group page********'
+											)}
+										</div>
 									</div>
 								</>
 							))}
