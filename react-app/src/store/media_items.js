@@ -1,5 +1,6 @@
 const LOAD_MEDIA = 'media/LOAD_MEDIA';
 const CREATE_MEDIA = 'media/CREATE_MEDIA';
+const DELETE_MEDIA = 'media/DELETE_MEDIA';
 
 const load_media = (media) => ({
 	type: LOAD_MEDIA,
@@ -9,6 +10,11 @@ const load_media = (media) => ({
 const create_media = (media) => ({
 	type: CREATE_MEDIA,
 	media,
+});
+
+const delete_media = (mediaItemId) => ({
+	type: DELETE_MEDIA,
+	mediaItemId,
 });
 
 export const getMedia = (id) => async (dispatch) => {
@@ -40,6 +46,16 @@ export const createMedia =
 		}
 	};
 
+export const deleteMedia = (mediaItemId) => async (dispatch) => {
+	const deleted = await fetch(`/api/media/${mediaItemId}`, {
+		method: 'DELETE',
+	});
+	if (deleted) {
+		dispatch(delete_media(mediaItemId));
+		return deleted;
+	}
+};
+
 const mediaReducer = (state = {}, action) => {
 	if (!action) return state;
 	switch (action.type) {
@@ -50,6 +66,11 @@ const mediaReducer = (state = {}, action) => {
 		}
 		case CREATE_MEDIA: {
 			return { ...state, media_items: action.media_items };
+		}
+		case DELETE_MEDIA: {
+			const new_state = { ...state };
+			delete new_state[action.mediaItemId];
+			return new_state;
 		}
 		default:
 			return state;

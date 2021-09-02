@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { createMedia } from '../../store/media_items';
 
 const CreateMedia = ({ setShowModal }) => {
-	const groups = Object.values(useSelector((state) => state.groups));
+	// const groups = Object.values(useSelector((state) => state.groups));
 	const albums = Object.values(useSelector((state) => state.albums));
 	const session = useSelector((state) => state.session.user);
-
+	const { id } = useParams();
 	const dispatch = useDispatch();
+	// debugger;
 
-	useEffect(() => {
-		dispatch(createMedia());
-	}, [dispatch]);
+	// useEffect(() => {
+	// 	dispatch(createMedia());
+	// }, [dispatch]);
+
 	// debugger;
 	const [errors, setErrors] = useState([]);
 	const [itemName, setItemName] = useState('');
@@ -20,7 +23,7 @@ const CreateMedia = ({ setShowModal }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const data = await dispatch(
-			createMedia(itemName, itemUrl, albums.id, session.id)
+			createMedia(itemName, itemUrl, id, session.id)
 		);
 		setShowModal(false);
 		if (data?.errors) {

@@ -1,22 +1,19 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect, useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getMedia } from '../../store/media_items';
 import CreateMediaModal from '../CreateMedia';
 import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 
 const MediaPage = () => {
-	const dispatch = useDispatch();
-	const { id } = useParams();
-	const albums = Object.values(useSelector((state) => state.albums));
 	const media_items = Object.values(useSelector((state) => state.media));
+	const { id } = useParams();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getMedia(id));
 	}, [dispatch]);
-
-	// debugger;
 
 	return (
 		<>
@@ -27,7 +24,6 @@ const MediaPage = () => {
 						<h1>My Safe Media</h1>
 					</div>
 					<div className='group-card__container'>
-						{/* update with create media modal */}
 						<CreateMediaModal />
 						{media_items &&
 							media_items?.map((item) => (
