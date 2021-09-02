@@ -50,12 +50,12 @@ export const createAlbum =
 		}
 	};
 
-export const deleteAlbum = (id) => async (dispatch) => {
-	const deleted = await fetch(`/api/albums/${id}`, {
+export const deleteAlbum = (albumId) => async (dispatch) => {
+	const deleted = await fetch(`/api/albums/${albumId}`, {
 		method: 'DELETE',
 	});
 	if (deleted) {
-		dispatch(delete_album(id));
+		dispatch(delete_album(albumId));
 		return deleted;
 	}
 };
@@ -77,6 +77,7 @@ const albumReducer = (state = {}, action) => {
 		case DELETE_ALBUMS: {
 			const new_state = { ...state };
 			delete new_state[action.albumId];
+			// debugger;
 			return new_state;
 		}
 		default:
