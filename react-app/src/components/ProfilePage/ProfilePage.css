@@ -5,6 +5,18 @@
 .page-title {
 	text-align: center;
 	border-bottom: 4px solid #5d18eb;
+	font-size: 35px;
+	font-family: 'Baloo 2', serif;
+	font-weight: bold;
+	margin: 20px;
+}
+
+.title {
+	text-align: center;
+	font-size: 35px;
+	font-family: 'Baloo 2', serif;
+	font-weight: bold;
+	margin: 20px;
 }
 
 .add-icon {
@@ -35,6 +47,13 @@
 	text-transform: uppercase;
 	margin: 10px;
 	font-size: 20px;
+	font-family: 'Baloo 2', serif;
+	font-weight: bold;
+}
+
+.bottom-title {
+	font-size: 20px;
+	font-family: 'Baloo 2', serif;
 }
 
 .icon-img {
@@ -46,6 +65,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
+	margin: 10px;
 }
 
 a {

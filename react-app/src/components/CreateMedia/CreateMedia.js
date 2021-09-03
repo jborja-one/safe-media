@@ -65,8 +65,8 @@ const CreateMedia = ({ setShowModal }) => {
 						value={itemUrl}
 						required></input>
 				</div>
-				<div className='add-restaurant__button-container'>
-					<button id='restaurant-submit-button' type='submit'>
+				<div className='button-container'>
+					<button className='user-login-button' type='submit'>
 						Upload Media
 					</button>
 				</div>

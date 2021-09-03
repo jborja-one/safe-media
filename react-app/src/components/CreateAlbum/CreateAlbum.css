@@ -1,0 +1,17 @@
+.button-container {
+	display: flex;
+	justify-content: center;
+	margin: 15px;
+}
+
+.user-login-button {
+	width: 50%;
+	height: 40px;
+	background-color: #ee4036;
+	color: white;
+	font-size: 20px;
+	font-family: 'Baloo 2', serif;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}

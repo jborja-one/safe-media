@@ -11,6 +11,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	text-align: center;
 	right: -20px;
 	margin-right: 70px;
@@ -25,7 +26,7 @@
 	margin-top: -20px;
 } */
 
-.main-img {
+#main-img {
 	width: 600px;
 	height: 600px;
 }
@@ -37,6 +38,7 @@
 /* *Feature Bar */
 .feature-bar__container {
 	display: flex;
+	/* position: relative; */
 	flex-direction: row;
 	align-items: center;
 	margin: 10px;
@@ -63,8 +65,8 @@
 	align-items: center;
 }
 
-.title {
+.feature-bar__title {
 	margin: 19px;
-	font-size: 20px;
+	font-size: 25px;
 	color: #5d18eb;
 }

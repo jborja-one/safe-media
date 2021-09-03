@@ -26,7 +26,7 @@ const GroupPage = () => {
 				{/* <SideBar /> */}
 				<div className='groups-container'>
 					<div className='page-title'>
-						<h1>My Albums</h1>
+						<h1 className='title'>My Albums</h1>
 					</div>
 					<div className='group-card__container'>
 						<CreateAlbumModal props={{ id }} />
@@ -42,7 +42,7 @@ const GroupPage = () => {
 											to={`/albums/${album?.id}`}
 											key={album?.id}>
 											<div>
-												<div>
+												<div className='group-category'>
 													{album?.album_category}
 												</div>
 												<div>
@@ -68,7 +68,9 @@ const GroupPage = () => {
 											</div>
 										</Link>
 										<div className='delete-and-title'>
-											<div>{album?.album_title}</div>
+											<div className='bottom-title'>
+												{album?.album_title}
+											</div>
 											<DeleteAlbumModal
 												albumId={album?.id}
 											/>

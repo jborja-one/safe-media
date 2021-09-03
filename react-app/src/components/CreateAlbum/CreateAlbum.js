@@ -88,8 +88,8 @@ const CreateAlbum = ({ props, setShowModal }) => {
 						})}
 					</select>
 				</div>
-				<div className='add-restaurant__button-container'>
-					<button id='restaurant-submit-button' type='submit'>
+				<div className='button-container'>
+					<button className='user-login-button' type='submit'>
 						Create Album
 					</button>
 				</div>

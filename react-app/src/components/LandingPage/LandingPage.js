@@ -13,7 +13,7 @@ const LandingPage = () => {
 				</div>
 				<div className='header-container'>
 					<img
-						className='footer-logo'
+						className='main-img'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-logo-removebg.png'
 					/>
 					<h1>Re-Take Control of your Privacy</h1>
@@ -28,7 +28,7 @@ const LandingPage = () => {
 				<div className='feature-container'>
 					<div className='feature-title'>
 						<i className='fas fa-sync '></i>
-						<h3 className='title'>Store and Sync</h3>
+						<h3 className='feature-bar__title'>Store and Sync</h3>
 					</div>
 					<div className='feature-content'>
 						<p className='feature-text'>
@@ -40,7 +40,7 @@ const LandingPage = () => {
 				<div className='feature-container'>
 					<div className='feature-title'>
 						<i className='fas fa-user-plus'></i>
-						<h3 className='title'>Share</h3>
+						<h3 className='feature-bar__title'>Share</h3>
 					</div>
 					<div className='feature-content'>
 						<p className='feature-text'>
@@ -52,7 +52,7 @@ const LandingPage = () => {
 				<div className='feature-container'>
 					<div className='feature-title'>
 						<i className='fas fa-user-shield'></i>
-						<h3 className='title'>Stay Secure</h3>
+						<h3 className='feature-bar__title'>Stay Secure</h3>
 					</div>
 					<div className='feature-content'>
 						<p className='feature-text'>
@@ -64,7 +64,7 @@ const LandingPage = () => {
 				<div className='feature-container' id='feature-container__last'>
 					<div className='feature-title'>
 						<i className='fas fa-spa'></i>
-						<h3 className='title'>Peace of Mind</h3>
+						<h3 className='feature-bar__title'>Peace of Mind</h3>
 					</div>
 					<div className='feature-content'>
 						<p className='feature-text'>

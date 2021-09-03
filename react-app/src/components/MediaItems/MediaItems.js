@@ -22,7 +22,7 @@ const MediaPage = () => {
 				{/* <SideBar /> */}
 				<div className='groups-container'>
 					<div className='page-title'>
-						<h1>My Safe Media</h1>
+						<h1 className='title'>My Safe Media</h1>
 					</div>
 					<div className='group-card__container'>
 						<CreateMediaModal />
@@ -38,7 +38,9 @@ const MediaPage = () => {
 													src={item?.item_url}></img>
 											</div>
 											<div className='delete-and-title'>
-												{item?.item_name}
+												<div className='bottom-title'>
+													{item?.item_name}
+												</div>
 												<DeleteMediaModal
 													mediaItemId={item?.id}
 												/>

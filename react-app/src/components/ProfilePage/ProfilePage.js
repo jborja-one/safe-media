@@ -24,7 +24,7 @@ const ProfilePage = () => {
 				{/* <SideBar /> */}
 				<div className='groups-container'>
 					<div className='page-title'>
-						<h1>My Groups</h1>
+						<h1 className='title'>My Groups</h1>
 					</div>
 					<div className='group-card__container'>
 						<CreateGroupModal />
@@ -64,7 +64,9 @@ const ProfilePage = () => {
 											</div>
 										</Link>
 										<div className='delete-and-title'>
-											<div>{group?.group_title}</div>
+											<div className='bottom-title'>
+												{group?.group_title}
+											</div>
 											<div>
 												<DeleteGroupModal
 													groupId={group.id}
