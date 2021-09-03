@@ -64,7 +64,9 @@ const ProfilePage = () => {
 											</div>
 										</Link>
 										<div className='delete-and-title'>
-											<div>{group?.group_title}</div>
+											<div className='bottom-title'>
+												{group?.group_title}
+											</div>
 											<div>
 												<DeleteGroupModal
 													groupId={group.id}

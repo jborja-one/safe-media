@@ -38,7 +38,9 @@ const MediaPage = () => {
 													src={item?.item_url}></img>
 											</div>
 											<div className='delete-and-title'>
-												{item?.item_name}
+												<div className='bottom-title'>
+													{item?.item_name}
+												</div>
 												<DeleteMediaModal
 													mediaItemId={item?.id}
 												/>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createGroup } from '../../store/groups';
 import { getIcons } from '../../store/group_icons';
+import './CreateGroup.css';
 
 // grab session instead of groups, and session.user.id
 
@@ -85,7 +86,7 @@ const CreateGroup = ({ setShowModal }) => {
 					</select>
 				</div>
 				<div className='add-restaurant__button-container'>
-					<button id='restaurant-submit-button' type='submit'>
+					<button className='user-login-button' type='submit'>
 						Create Group
 					</button>
 				</div>

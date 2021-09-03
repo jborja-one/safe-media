@@ -13,7 +13,7 @@ const LandingPage = () => {
 				</div>
 				<div className='header-container'>
 					<img
-						className='footer-logo'
+						className='main-img'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-logo-removebg.png'
 					/>
 					<h1>Re-Take Control of your Privacy</h1>
