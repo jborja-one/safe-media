@@ -7,7 +7,7 @@ const loadAlbumIcons = (icons) => ({
 });
 
 export const getIcons = () => async (dispatch) => {
-	const res = await fetch('/api/album_icons');
+	const res = await fetch('/api/album_icons/');
 
 	if (res.ok) {
 		const icons = await res.json();

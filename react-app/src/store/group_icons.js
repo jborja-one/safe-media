@@ -7,7 +7,7 @@ const loadIcons = (icons) => ({
 });
 
 export const getIcons = () => async (dispatch) => {
-	const res = await fetch('/api/group_icons');
+	const res = await fetch('/api/group_icons/');
 
 	if (res.ok) {
 		const icons = await res.json();
