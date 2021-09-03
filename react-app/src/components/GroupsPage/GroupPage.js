@@ -30,14 +30,17 @@ const GroupPage = () => {
 					</div>
 					<div className='group-card__container'>
 						<CreateAlbumModal props={{ id }} />
+						{console.log(id, '*****from grouppage*****')}
 						{albums &&
 							albums?.map((album) => (
 								<>
-									<div key={album.id} className='groups-card'>
+									<div
+										key={album?.id}
+										className='groups-card'>
 										<Link
 											className='card-link'
-											to={`/albums/${album.id}`}
-											key={album.id}>
+											to={`/albums/${album?.id}`}
+											key={album?.id}>
 											<div>
 												<div>
 													{album?.album_category}
@@ -48,14 +51,14 @@ const GroupPage = () => {
 															return (
 																<div
 																	key={
-																		icon.id
+																		icon?.id
 																	}>
-																	{album.album_icon_id ===
-																	icon.id ? (
+																	{album?.album_icon_id ===
+																	icon?.id ? (
 																		<img
 																			className='icon-img'
 																			src={
-																				icon.img_url
+																				icon?.img_url
 																			}></img>
 																	) : null}
 																</div>
@@ -67,7 +70,7 @@ const GroupPage = () => {
 										<div className='delete-and-title'>
 											<div>{album?.album_title}</div>
 											<DeleteAlbumModal
-												albumId={album.id}
+												albumId={album?.id}
 											/>
 										</div>
 									</div>

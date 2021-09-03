@@ -51,6 +51,7 @@ const ProfilePage = () => {
 																	{group.group_icon_id ===
 																	icon.id ? (
 																		<img
+																			alt='icon'
 																			className='icon-img'
 																			src={
 																				icon.img_url

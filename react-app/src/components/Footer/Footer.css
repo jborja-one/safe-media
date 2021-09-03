@@ -1,16 +1,18 @@
 /* *Footer */
 .footer-container {
 	display: flex;
+	position: absolute;
 	align-items: center;
 	justify-content: space-around;
 	background-color: rgb(142, 185, 161);
 	border-radius: 25px;
-	margin-top: 1rem;
+	/* margin-top: 1rem; */
 	margin: 10px;
-	position: 'fixed';
 	left: 0;
+	right: 0;
 	bottom: 0;
 	height: auto;
+	width: 99%;
 	/* opacity: 0.8; */
 }
 

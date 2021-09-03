@@ -17,13 +17,16 @@ const LoginForm = ({ setShowModal }) => {
 		e.preventDefault();
 		const data = await dispatch(login(email, password));
 
-		if (data) {
-			setErrors(data);
-		}
+		console.log('------------------------------------');
+		console.log(Array.isArray(data), '***from login');
+		console.log('------------------------------------');
 
-		if (data) {
+		if (Array.isArray(data)) {
+			setErrors(data);
+		} else {
 			setShowModal(false);
-			return history.push(`/users/${data.id}`);
+			history.push(`/users/${data.id}`);
+			return history.go(0);
 		}
 	};
 
@@ -58,10 +61,11 @@ const LoginForm = ({ setShowModal }) => {
 					<input
 						className='form-input'
 						name='email'
-						type='text'
+						type='email'
 						placeholder='Email'
 						value={email}
 						onChange={updateEmail}
+						required
 					/>
 				</div>
 				<div className='form-label__container'>
@@ -72,6 +76,7 @@ const LoginForm = ({ setShowModal }) => {
 						placeholder='Password'
 						value={password}
 						onChange={updatePassword}
+						required
 					/>
 				</div>
 				<div className='form-button__container'>

@@ -60,17 +60,19 @@ export const deleteAlbum = (albumId) => async (dispatch) => {
 	}
 };
 
-const albumReducer = (state = {}, action) => {
+const initialstate = {};
+
+const albumReducer = (state = initialstate, action) => {
 	if (!action) return state;
 	switch (action.type) {
 		case LOAD_ALBUMS: {
 			const { albums } = action.albums;
 			return { ...state, ...albums };
 		}
-		case LOAD_GROUPS: {
-			const { groups } = action.groups;
-			return { ...state, ...groups };
-		}
+		// case LOAD_GROUPS: {
+		// 	const { groups } = action.groups;
+		// 	return { ...state, ...groups };
+		// }
 		case CREATE_ALBUMS: {
 			return { ...state, albums: action.albums };
 		}
