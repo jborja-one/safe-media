@@ -18,4 +18,17 @@
 
 li {
 	list-style-type: circle;
+	margin: 5px;
+}
+
+a:visited {
+	color: black;
+}
+
+.contact-links {
+	color: black;
+}
+
+.icon {
+	margin-left: 10px;
 }
