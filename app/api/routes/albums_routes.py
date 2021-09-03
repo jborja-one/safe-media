@@ -53,7 +53,7 @@ def create_album(id):
             album_category=form.data['album_category'],
             album_title=form.data['album_title'],
             album_icon_id=form.data['album_icon_id'],
-            group_id=current_user.id
+            group_id=id
         )
         db.session.add(album)
         db.session.commit()

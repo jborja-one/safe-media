@@ -3,7 +3,7 @@ import { Modal } from '../../context/Modal';
 import CreateAlbum from './CreateAlbum';
 // import './CreateGroup.css';
 
-function CreateAlbumModal() {
+function CreateAlbumModal({ props }) {
 	const [showModal, setShowModal] = useState(false);
 
 	return (
@@ -19,7 +19,11 @@ function CreateAlbumModal() {
 					<div className='login-title-container'>
 						<h3 className='login-title'>Create an Album</h3>
 					</div>
-					<CreateAlbum setShowModal={setShowModal} />
+					<CreateAlbum
+						props={{ props }}
+						setShowModal={setShowModal}
+					/>
+					{console.log(props.id, '****from modal******')}
 				</Modal>
 			)}
 		</>

@@ -72,7 +72,7 @@ const CreateGroup = ({ setShowModal }) => {
 						onChange={updateIcon}
 						value={icon}
 						required>
-						<option value='' disabled selected>
+						<option key={icon.id} value='' disabled selected>
 							Select an Icon
 						</option>
 						{groupIcons?.map((icon) => {

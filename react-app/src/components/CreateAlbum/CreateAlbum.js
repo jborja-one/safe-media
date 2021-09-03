@@ -4,19 +4,21 @@ import { useParams } from 'react-router-dom';
 import { createAlbum } from '../../store/albums';
 import { getIcons } from '../../store/album_icons';
 
-const CreateAlbum = ({ setShowModal }) => {
+const CreateAlbum = ({ props, setShowModal }) => {
 	const albums = Object.values(useSelector((state) => state.albums));
 	const albumIcons = Object.values(useSelector((state) => state.albumIcons));
 	const groups = Object.values(useSelector((state) => state.groups));
 
 	const dispatch = useDispatch();
-	const { id } = useParams;
+	// const { id } = useParams;
 
 	useEffect(() => {
 		dispatch(getIcons());
 	}, [dispatch]);
 	// debugger;
-
+	console.log('------------------------------------');
+	console.log(props.props.id);
+	console.log('------------------------------------');
 	const [errors, setErrors] = useState([]);
 	const [category, setCategory] = useState('');
 	const [title, setTitle] = useState('');
@@ -25,7 +27,7 @@ const CreateAlbum = ({ setShowModal }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const data = await dispatch(
-			createAlbum(category, title, icon, albums[0].group_id)
+			createAlbum(category, title, icon, props.props.id)
 		);
 		setShowModal(false);
 		if (data?.errors) {

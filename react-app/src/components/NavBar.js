@@ -48,10 +48,13 @@ const NavBar = () => {
 						width='80px'
 					/>
 				</NavLink>
-				<a className='login-button' href=''>
-					{' '}
-					Contact Us{' '}
-				</a>
+				<NavLink
+					to={`/users/${sessionUser?.id}`}
+					exact={true}
+					activeClassName='active'
+					className='login-button'>
+					Home
+				</NavLink>
 			</div>
 		);
 	}
