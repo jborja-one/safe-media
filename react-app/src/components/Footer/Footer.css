@@ -1,7 +1,7 @@
 /* *Footer */
 .footer-container {
 	display: flex;
-	position: absolute;
+	/* position: absolute; */
 	align-items: center;
 	justify-content: space-around;
 	background-color: rgb(142, 185, 161);

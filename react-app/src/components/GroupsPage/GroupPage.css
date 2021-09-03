@@ -1,0 +1,16 @@
+.page-title {
+	text-align: center;
+	border-bottom: 4px solid #5d18eb;
+	font-size: 35px;
+	font-family: 'Baloo 2', serif;
+	font-weight: bold;
+	margin: 20px;
+}
+
+.title {
+	text-align: center;
+	font-size: 35px;
+	font-family: 'Baloo 2', serif;
+	font-weight: bold;
+	margin: 20px;
+}

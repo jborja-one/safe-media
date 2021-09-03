@@ -24,7 +24,7 @@ const ProfilePage = () => {
 				{/* <SideBar /> */}
 				<div className='groups-container'>
 					<div className='page-title'>
-						<h1>My Groups</h1>
+						<h1 className='title'>My Groups</h1>
 					</div>
 					<div className='group-card__container'>
 						<CreateGroupModal />

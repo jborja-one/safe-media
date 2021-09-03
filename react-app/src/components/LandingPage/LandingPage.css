@@ -38,6 +38,7 @@
 /* *Feature Bar */
 .feature-bar__container {
 	display: flex;
+	/* position: relative; */
 	flex-direction: row;
 	align-items: center;
 	margin: 10px;
@@ -64,8 +65,8 @@
 	align-items: center;
 }
 
-.title {
+.feature-bar__title {
 	margin: 19px;
-	font-size: 20px;
+	font-size: 25px;
 	color: #5d18eb;
 }

@@ -11,6 +11,14 @@
 	margin: 20px;
 }
 
+.title {
+	text-align: center;
+	font-size: 35px;
+	font-family: 'Baloo 2', serif;
+	font-weight: bold;
+	margin: 20px;
+}
+
 .add-icon {
 	margin-top: 60px;
 	margin-right: 40px;

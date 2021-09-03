@@ -85,7 +85,7 @@ const CreateGroup = ({ setShowModal }) => {
 						})}
 					</select>
 				</div>
-				<div className='add-restaurant__button-container'>
+				<div className='button-container'>
 					<button className='user-login-button' type='submit'>
 						Create Group
 					</button>
