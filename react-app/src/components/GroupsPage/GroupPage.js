@@ -15,7 +15,7 @@ const GroupPage = () => {
 
 	useEffect(() => {
 		dispatch(getAlbums(id));
-	}, [dispatch]);
+	}, [dispatch, id]);
 
 	return (
 		<>

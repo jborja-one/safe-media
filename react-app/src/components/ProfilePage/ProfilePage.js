@@ -22,7 +22,7 @@ const ProfilePage = () => {
 
 	useEffect(() => {
 		dispatch(getGroups(id));
-	}, [dispatch]);
+	}, [dispatch, id]);
 
 	// debugger;
 

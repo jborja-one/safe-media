@@ -14,7 +14,7 @@ const MediaPage = () => {
 
 	useEffect(() => {
 		dispatch(getMedia(id));
-	}, [dispatch]);
+	}, [dispatch, id]);
 
 	return (
 		<>
