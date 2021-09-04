@@ -28,9 +28,32 @@ const Footer = () => {
 			<div className='contact-us'>
 				<h3>Jonathan Borja</h3>
 				<ul>
-					<li>email</li>
-					<li>github</li>
-					<li>linked in</li>
+					<li>
+						<a
+							className='contact-links'
+							href='mailto:jborja.one@gmail.com'
+							target='_blank'
+							rel='noreferrer'>
+							Email
+							<i className='icon fas fa-lg fa-envelope'></i>
+						</a>
+					</li>
+					<li>
+						<a
+							className='contact-links'
+							href='https://github.com/jborja-one/safe-media'>
+							Github
+							<i className='icon fab fa-lg fa-github'></i>
+						</a>
+					</li>
+					<li>
+						<a
+							className='contact-links'
+							href='https://www.linkedin.com/in/jonathan-borja-1a9959172//'>
+							Linkedin
+							<i class='icon fab fa-lg fa-linkedin'></i>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</footer>
