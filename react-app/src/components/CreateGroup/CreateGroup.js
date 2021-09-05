@@ -9,7 +9,6 @@ import './CreateGroup.css';
 const CreateGroup = ({ setShowModal }) => {
 	const session = useSelector((state) => state.session.user);
 	const groupIcons = Object.values(useSelector((state) => state.groupIcons));
-
 	const dispatch = useDispatch();
 
 	useEffect(() => {

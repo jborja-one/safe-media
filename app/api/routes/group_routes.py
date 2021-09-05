@@ -40,6 +40,7 @@ def get_groups(user_id):
 @group_routes.route('/', methods=['POST'])
 def create_group():
     form = CreateGroup()
+    print(form.data, '**********from routes**************')
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         group = Group(
