@@ -21,17 +21,47 @@ View live: <a href='https://safemedia.herokuapp.com/'>Safe Media</a>
 
 ## Home/Landing Page
 
--   Image here (coming soon...)
+- The landing page has convinient and clearly designed login and signup buttons, which open a modal to use its functionality.
+
+<img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-landing-page.png' >
+    <br />
+    
+## Login and Signup Modals
+
+- To facilitate our user experience, we use wodals for log in and sign up, to avoid loading a whole new page and improve user satisfaction.
+
+<img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-login-signup.png' >
     <br />
 
 ## User Profile Page
 
--   Image here (coming soon...)
+- Our user profile page is where our users will be able to categorize their media uploads by creating groups with descriptive icons and customizable category and title names.
+- There are also clearly designed logout and home buttons to aid in navigation of the site.
+- The logo icon in between the logout and home buttons, also acts as a link to return to the home page.
+- There is a clear Create button that will allow our users to create a new group with a conviniently designed modal.
+
+<img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/groups-page.png' >
     <br />
 
 ## Albums Page
 
--   Image here (coming soon...)
+- Our albums page is where our users will be able to further organize their uploads by creating albums within each group with descriptive icons and customizable category and title names.
+- There are also clearly designed logout and home buttons to aid in navigation of the site.
+- The logo icon in between the logout and home buttons, also acts as a link to return to the home page.
+- There is a clear Create button that will allow our users to create a new group with a conviniently designed modal.
+
+<img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/albums-page.png' >
+    <br />
+    
+## Media Page
+
+- Our media page is where your media will live. Here you will be able to upload your images (audio files, video files and more coming soon...)
+- Our users will be able to add a descriptive title to each of their files.
+- There are also clearly designed logout and home buttons to aid in navigation of the site.
+- The logo icon in between the logout and home buttons, also acts as a link to return to the home page.
+- There is a clear Create button that will allow our users to create a new group with a conviniently designed modal.
+
+<img src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/media-page.png' >
     <br />
 
 # Technologies
