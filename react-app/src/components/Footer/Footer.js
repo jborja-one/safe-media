@@ -5,6 +5,7 @@ const Footer = () => {
 		<footer className='footer-container'>
 			<div className='logo-container'>
 				<img
+					alt=''
 					className='footer-logo'
 					src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-logo-removebg.png'
 				/>

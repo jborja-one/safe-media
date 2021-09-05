@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 
 import { deleteGroup } from '../../store/groups';
 import './DeleteGroup.css';
-// import DeleteGroupModal from '.';
 
 function DeleteGroup({ groupId, setShowModal }) {
-	const history = useHistory();
 	const dispatch = useDispatch();
 
 	const handleDelete = (e) => {
@@ -17,7 +12,6 @@ function DeleteGroup({ groupId, setShowModal }) {
 		if (success) {
 			e.preventDefault();
 			setShowModal(false);
-			// history.go(0);
 		} else {
 			alert('Please try again');
 		}
@@ -39,7 +33,9 @@ function DeleteGroup({ groupId, setShowModal }) {
 					onClick={handleDelete}>
 					Delete
 				</button>
-				<button className='confirmation-button' onClick={handleCancel}>
+				<button
+					className='delete-confirmation-button'
+					onClick={handleCancel}>
 					Cancel
 				</button>
 			</div>

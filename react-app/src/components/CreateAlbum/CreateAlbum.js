@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, useHistory } from 'react-router-dom';
 import { createAlbum } from '../../store/albums';
 import { getIcons } from '../../store/album_icons';
 
@@ -8,7 +7,6 @@ const CreateAlbum = ({ props, setShowModal }) => {
 	const albumIcons = Object.values(useSelector((state) => state.albumIcons));
 
 	const dispatch = useDispatch();
-	const history = useHistory();
 
 	useEffect(() => {
 		dispatch(getIcons());

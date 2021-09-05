@@ -38,8 +38,6 @@ def get_albums(group_id):
         new_dict['albums'][album.id] = album.to_dict()
         new_dict['groups'][album.id] = album.to_dict()
         new_dict['icons'][album.icon.id] = album.icon.to_dict()
-    # import pdb
-    # pdb.set_trace()
     return new_dict
 
 
@@ -48,7 +46,6 @@ def create_album(id):
     form = CreateAlbum()
     form['csrf_token'].data = request.cookies['csrf_token']
     if not form.validate_on_submit():
-        # groupId = Group.query.get(id)
         album = Album(
             album_category=form.data['album_category'],
             album_title=form.data['album_title'],

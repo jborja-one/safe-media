@@ -4,8 +4,6 @@ import { createGroup } from '../../store/groups';
 import { getIcons } from '../../store/group_icons';
 import './CreateGroup.css';
 
-// grab session instead of groups, and session.user.id
-
 const CreateGroup = ({ setShowModal }) => {
 	const session = useSelector((state) => state.session.user);
 	const groupIcons = Object.values(useSelector((state) => state.groupIcons));

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { login } from '../../store/session';
 import { useHistory } from 'react-router';
 
@@ -8,18 +7,12 @@ const LoginForm = ({ setShowModal }) => {
 	const [errors, setErrors] = useState([]);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const user = useSelector((state) => state.session.user);
 	const dispatch = useDispatch();
 	const history = useHistory();
-	const { id } = useParams();
 
 	const onLogin = async (e) => {
 		e.preventDefault();
 		const data = await dispatch(login(email, password));
-
-		console.log('------------------------------------');
-		console.log(Array.isArray(data), '***from login');
-		console.log('------------------------------------');
 
 		if (Array.isArray(data)) {
 			setErrors(data);
@@ -87,8 +80,10 @@ const LoginForm = ({ setShowModal }) => {
 				<div className='demo-login-container'>
 					<p className='demo-text'>
 						To Safe Media Demo,{' '}
-						<a className='demo-click-here' onClick={demoLogin}>
-							{' '}
+						<a
+							href=''
+							className='demo-click-here'
+							onClick={demoLogin}>
 							Click Here{' '}
 						</a>
 					</p>

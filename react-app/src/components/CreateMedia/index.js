@@ -10,6 +10,7 @@ function CreateMediaModal() {
 		<>
 			<div className='login-button' onClick={() => setShowModal(true)}>
 				<img
+					alt=''
 					className='add-icon'
 					src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/add-item-removebg.png'
 				/>

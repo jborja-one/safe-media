@@ -14,13 +14,14 @@ const SideBar = () => {
 
 	useEffect(() => {
 		dispatch(getGroups(id));
-	}, [dispatch]);
+	}, [dispatch, id]);
 
 	return (
 		<>
 			<div className='sidebar-container'>
 				<div className='user-info__container'>
 					<img
+						alt=''
 						className='profile-pic'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/edit-profile-pic-removebg.png'
 					/>
@@ -62,6 +63,7 @@ const SideBar = () => {
 																	{group.group_icon_id ===
 																	icon.id ? (
 																		<img
+																			alt=''
 																			key={
 																				icon.id
 																			}

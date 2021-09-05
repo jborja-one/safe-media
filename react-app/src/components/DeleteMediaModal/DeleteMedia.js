@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 
 import { deleteMedia } from '../../store/media_items';
@@ -34,7 +33,9 @@ function DeleteMedia({ mediaItemId, setShowModal }) {
 					onClick={handleDelete}>
 					Delete
 				</button>
-				<button className='confirmation-button' onClick={handleCancel}>
+				<button
+					className='delete-confirmation-button'
+					onClick={handleCancel}>
 					Cancel
 				</button>
 			</div>

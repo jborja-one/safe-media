@@ -48,9 +48,6 @@ export const createGroup =
 			const group = await res.json();
 			dispatch(create_group(group));
 			return group;
-		} else {
-			const errors = await res.json();
-			// debugger;
 		}
 	};
 
