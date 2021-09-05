@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import UserLoginModal from './UserLoginModal';
@@ -22,6 +22,7 @@ const NavBar = () => {
 				<UserLoginModal />
 				<NavLink to={`/`} activeClassName='active'>
 					<img
+						alt=''
 						className='navbar-logo'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-favicon-nobg.png'
 						width='80px'
@@ -43,6 +44,7 @@ const NavBar = () => {
 					to={`/users/${sessionUser?.id}`}
 					activeClassName='active'>
 					<img
+						alt=''
 						className='navbar-logo'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-favicon-nobg.png'
 						width='80px'

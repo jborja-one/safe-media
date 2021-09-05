@@ -7,12 +7,14 @@ const LandingPage = () => {
 			<div className='home-container'>
 				<div className='header-img'>
 					<img
+						alt=''
 						className='main-img'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/collage-removebg.png'
 					/>
 				</div>
 				<div className='header-container'>
 					<img
+						alt=''
 						className='main-img'
 						src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/safemedia-logo-removebg.png'
 					/>
@@ -33,7 +35,7 @@ const LandingPage = () => {
 					<div className='feature-content'>
 						<p className='feature-text'>
 							Keep all your media files secured and truly private,
-							up to date, and accessible from any deivce
+							up to date, and accessible from any device
 						</p>
 					</div>
 				</div>

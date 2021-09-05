@@ -1,4 +1,4 @@
-import { LOAD_GROUPS } from './groups';
+// import { LOAD_GROUPS } from './groups';
 export const LOAD_ALBUMS = 'albums/LOAD_ALBUMS';
 const CREATE_ALBUMS = 'albums/CREATE_ALBUMS';
 const DELETE_ALBUMS = 'albums/DELETE_ALBUMS';
@@ -44,7 +44,6 @@ export const createAlbum =
 				album_icon_id: Number(albumIconId),
 			}),
 		});
-		// debugger;
 		if (res.ok) {
 			const album = await res.json();
 			dispatch(create_album(album));
@@ -76,17 +75,12 @@ const albumReducer = (state = initialstate, action) => {
 			const { albums } = action.albums;
 			return { ...albums };
 		}
-		// case LOAD_GROUPS: {
-		// 	const { groups } = action.groups;
-		// 	return { ...state, ...groups };
-		// }
 		case CREATE_ALBUMS: {
 			return { ...state, albums: action.albums };
 		}
 		case DELETE_ALBUMS: {
 			const new_state = { ...state };
 			delete new_state[action.albumId];
-			// debugger;
 			return new_state;
 		}
 		case CLEAR_ALBUMS: {

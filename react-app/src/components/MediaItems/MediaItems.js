@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getMedia } from '../../store/media_items';
 import CreateMediaModal from '../CreateMedia';
 import DeleteMediaModal from '../DeleteMediaModal';
-import SideBar from '../SideBar/SideBar';
+// import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 
 const MediaPage = () => {
@@ -29,10 +29,11 @@ const MediaPage = () => {
 						{media_items &&
 							media_items?.map((item) => (
 								<>
-									<div className='groups-card'>
+									<div key={item.id} className='groups-card'>
 										<div>
 											<div>
 												<img
+													alt=''
 													className='icon-img'
 													src={item?.item_url}></img>
 											</div>

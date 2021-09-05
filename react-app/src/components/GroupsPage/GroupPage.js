@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect, useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getAlbums } from '../../store/albums';
-import { getGroups } from '../../store/groups';
 import CreateAlbumModal from '../CreateAlbum';
 import DeleteAlbumModal from '../DeleteAlbumModal';
-import SideBar from '../SideBar/SideBar';
+// import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 import './GroupPage.css';
 
@@ -54,6 +53,7 @@ const GroupPage = () => {
 																	{album?.album_icon_id ===
 																	icon?.id ? (
 																		<img
+																			alt='footer img'
 																			className='icon-img'
 																			src={
 																				icon?.img_url

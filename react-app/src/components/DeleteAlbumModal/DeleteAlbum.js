@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 
 import { deleteAlbum } from '../../store/albums';
@@ -7,7 +6,6 @@ import './DeleteAlbum.css';
 
 function DeleteAlbum({ albumId, setShowModal }) {
 	const dispatch = useDispatch();
-	const history = useHistory();
 
 	const handleDelete = (e) => {
 		const success = dispatch(deleteAlbum(albumId));
@@ -15,7 +13,6 @@ function DeleteAlbum({ albumId, setShowModal }) {
 		if (success) {
 			e.preventDefault();
 			setShowModal(false);
-			// history.go(0);
 		} else {
 			alert('Please try again');
 		}
@@ -37,7 +34,9 @@ function DeleteAlbum({ albumId, setShowModal }) {
 					onClick={handleDelete}>
 					Delete
 				</button>
-				<button className='confirmation-button' onClick={handleCancel}>
+				<button
+					className='delete-confirmation-button'
+					onClick={handleCancel}>
 					Cancel
 				</button>
 			</div>

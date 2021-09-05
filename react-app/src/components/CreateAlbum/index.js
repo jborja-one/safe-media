@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import CreateAlbum from './CreateAlbum';
-// import './CreateGroup.css';
 
 function CreateAlbumModal({ props }) {
 	const [showModal, setShowModal] = useState(false);
@@ -10,6 +9,7 @@ function CreateAlbumModal({ props }) {
 		<>
 			<div className='login-button' onClick={() => setShowModal(true)}>
 				<img
+					alt=''
 					className='add-icon'
 					src='https://safemedia-capstone.s3.us-east-2.amazonaws.com/Public/add-album-removebg.png'
 				/>

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect, useParams, Link } from 'react-router-dom';
-import { getGroups, deleteGroup } from '../../store/groups';
+import { useParams, Link } from 'react-router-dom';
+import { getGroups } from '../../store/groups';
 import CreateGroupModal from '../CreateGroup';
 import DeleteGroupModal from '../DeleteGroupModal';
-import SideBar from '../SideBar/SideBar';
+// import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 import './ProfilePage.css';
 
@@ -31,11 +31,10 @@ const ProfilePage = () => {
 						{groups &&
 							groups?.map((group) => (
 								<>
-									<div className='groups-card'>
+									<div key={group.id} className='groups-card'>
 										<Link
 											className='card-link'
-											to={`/groups/${group.id}`}
-											key={group.id}>
+											to={`/groups/${group.id}`}>
 											<div>
 												<div className='group-category'>
 													{group?.group_category}
