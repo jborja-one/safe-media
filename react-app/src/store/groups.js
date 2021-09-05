@@ -74,7 +74,7 @@ const groupReducer = (state = {}, action) => {
 	switch (action.type) {
 		case LOAD_GROUPS: {
 			const { groups } = action.groups;
-			return { ...state, ...groups };
+			return { ...groups };
 		}
 		case CREATE_GROUP: {
 			const new_state = {
