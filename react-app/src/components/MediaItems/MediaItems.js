@@ -29,7 +29,6 @@ const MediaPage = () => {
 						{media_items &&
 							media_items?.map((item) => (
 								<>
-									{/* {console.log(item.id, '############')} */}
 									<div className='groups-card'>
 										<div>
 											<div>

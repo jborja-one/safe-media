@@ -5,21 +5,15 @@ import { createAlbum } from '../../store/albums';
 import { getIcons } from '../../store/album_icons';
 
 const CreateAlbum = ({ props, setShowModal }) => {
-	const albums = Object.values(useSelector((state) => state.albums));
 	const albumIcons = Object.values(useSelector((state) => state.albumIcons));
-	const groups = Object.values(useSelector((state) => state.groups));
 
 	const dispatch = useDispatch();
 	const history = useHistory();
-	// const { id } = useParams;
 
 	useEffect(() => {
 		dispatch(getIcons());
 	}, [dispatch]);
-	// debugger;
-	console.log('------------------------------------');
-	console.log(props.props.id);
-	console.log('------------------------------------');
+
 	const [errors, setErrors] = useState([]);
 	const [category, setCategory] = useState('');
 	const [title, setTitle] = useState('');
@@ -31,7 +25,6 @@ const CreateAlbum = ({ props, setShowModal }) => {
 			createAlbum(category, title, icon, props.props.id)
 		);
 		setShowModal(false);
-		history.go(0);
 		if (data?.errors) {
 			setErrors(data.errors);
 		} else if (data) {

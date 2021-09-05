@@ -13,9 +13,9 @@ const create_group = (group) => ({
 	group,
 });
 
-const delete_group = (id) => ({
+const delete_group = (groupId) => ({
 	type: DELETE_GROUP,
-	id,
+	groupId,
 });
 
 const clear_group = () => ({
@@ -60,8 +60,8 @@ export const deleteGroup = (id) => async (dispatch) => {
 	});
 	if (deleted) {
 		dispatch(delete_group(id));
-		return deleted;
 	}
+	return deleted;
 };
 
 export const clearGroup = () => async (dispatch) => {

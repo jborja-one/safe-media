@@ -14,7 +14,6 @@ const GroupPage = () => {
 	const { id } = useParams();
 	const albums = Object.values(useSelector((state) => state.albums));
 	const icons = Object.values(useSelector((state) => state.albumIcons));
-	// const groups = Object.values(useSelector((state) => state.groups));
 
 	useEffect(() => {
 		dispatch(getAlbums(id));
@@ -30,7 +29,6 @@ const GroupPage = () => {
 					</div>
 					<div className='group-card__container'>
 						<CreateAlbumModal props={{ id }} />
-						{console.log(id, '*****from grouppage*****')}
 						{albums &&
 							albums?.map((album) => (
 								<>

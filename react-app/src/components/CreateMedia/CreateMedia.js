@@ -4,19 +4,11 @@ import { useHistory, useParams } from 'react-router-dom';
 import { createMedia } from '../../store/media_items';
 
 const CreateMedia = ({ setShowModal }) => {
-	// const groups = Object.values(useSelector((state) => state.groups));
-	const albums = Object.values(useSelector((state) => state.albums));
 	const session = useSelector((state) => state.session.user);
 	const { id } = useParams();
 	const dispatch = useDispatch();
 	const history = useHistory();
-	// debugger;
 
-	// useEffect(() => {
-	// 	dispatch(createMedia());
-	// }, [dispatch]);
-
-	// debugger;
 	const [errors, setErrors] = useState([]);
 	const [itemName, setItemName] = useState('');
 	const [itemUrl, setItemUrl] = useState('');
