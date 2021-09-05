@@ -14,7 +14,8 @@ class Album(db.Model):
 
     groups = db.relationship("Group", back_populates="albums")
     icon = db.relationship("AlbumIcon", back_populates="albums")
-    media_items = db.relationship('MediaItem', back_populates='album')
+    media_items = db.relationship(
+        'MediaItem', back_populates='album', cascade='all, delete')
     comments = db.relationship('Comment', back_populates='album')
 
     def to_dict(self):

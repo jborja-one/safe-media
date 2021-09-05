@@ -13,7 +13,8 @@ class Group(db.Model):
 
     users = db.relationship("User", back_populates="groups")
     icon = db.relationship("GroupIcon", back_populates="groups")
-    albums = db.relationship("Album", back_populates="groups")
+    albums = db.relationship(
+        "Album", back_populates="groups", cascade='all, delete')
 
     def to_dict(self):
         return {

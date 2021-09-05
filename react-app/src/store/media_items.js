@@ -1,6 +1,7 @@
 const LOAD_MEDIA = 'media/LOAD_MEDIA';
 const CREATE_MEDIA = 'media/CREATE_MEDIA';
 const DELETE_MEDIA = 'media/DELETE_MEDIA';
+const CLEAR_MEDIA = 'media/CLEAR_MEDIA';
 
 const load_media = (media) => ({
 	type: LOAD_MEDIA,
@@ -15,6 +16,10 @@ const create_media = (media) => ({
 const delete_media = (mediaItemId) => ({
 	type: DELETE_MEDIA,
 	mediaItemId,
+});
+
+const clear_media = () => ({
+	type: CLEAR_MEDIA,
 });
 
 export const getMedia = (id) => async (dispatch) => {
@@ -56,6 +61,11 @@ export const deleteMedia = (mediaItemId) => async (dispatch) => {
 	}
 };
 
+export const clearMedia = () => async (dispatch) => {
+	const clear = dispatch(clear_media());
+	return clear;
+};
+
 const mediaReducer = (state = {}, action) => {
 	if (!action) return state;
 	switch (action.type) {
@@ -71,6 +81,9 @@ const mediaReducer = (state = {}, action) => {
 			const new_state = { ...state };
 			delete new_state[action.mediaItemId];
 			return new_state;
+		}
+		case CLEAR_MEDIA: {
+			return {};
 		}
 		default:
 			return state;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { createAlbum } from '../../store/albums';
 import { getIcons } from '../../store/album_icons';
 
@@ -10,6 +10,7 @@ const CreateAlbum = ({ props, setShowModal }) => {
 	const groups = Object.values(useSelector((state) => state.groups));
 
 	const dispatch = useDispatch();
+	const history = useHistory();
 	// const { id } = useParams;
 
 	useEffect(() => {
@@ -30,6 +31,7 @@ const CreateAlbum = ({ props, setShowModal }) => {
 			createAlbum(category, title, icon, props.props.id)
 		);
 		setShowModal(false);
+		history.go(0);
 		if (data?.errors) {
 			setErrors(data.errors);
 		} else if (data) {
