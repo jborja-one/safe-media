@@ -22,6 +22,5 @@ class Group(db.Model):
             'group_category': self.group_category,
             'group_title': self.group_title,
             'group_icon_id': self.group_icon_id,
-            # 'icon': [icon.to_dict() for i in self.icon],
             'user_id': self.user_id
         }

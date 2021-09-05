@@ -28,13 +28,12 @@ export const getMedia = (id) => async (dispatch) => {
 	if (res.ok) {
 		const media = await res.json();
 		dispatch(load_media(media));
-		return res;
 	}
+	return res;
 };
 
 export const createMedia =
 	(itemName, itemUrl, albumId, userId) => async (dispatch) => {
-		console.log(itemName, '***from thunk****');
 		const res = await fetch(`/api/media/${userId}`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },

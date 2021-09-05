@@ -48,10 +48,7 @@ export const createAlbum =
 		if (res.ok) {
 			const album = await res.json();
 			dispatch(create_album(album));
-
 			return album;
-		} else {
-			const errors = await res.json();
 		}
 	};
 
@@ -61,8 +58,8 @@ export const deleteAlbum = (albumId) => async (dispatch) => {
 	});
 	if (deleted) {
 		dispatch(delete_album(albumId));
-		return deleted;
 	}
+	return deleted;
 };
 
 export const clearAlbums = () => async (dispatch) => {

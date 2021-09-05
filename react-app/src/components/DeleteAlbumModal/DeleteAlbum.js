@@ -15,7 +15,7 @@ function DeleteAlbum({ albumId, setShowModal }) {
 		if (success) {
 			e.preventDefault();
 			setShowModal(false);
-			history.go(0);
+			// history.go(0);
 		} else {
 			alert('Please try again');
 		}

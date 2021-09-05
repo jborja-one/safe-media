@@ -50,7 +50,6 @@ def create_media(id):
         )
         db.session.add(mediaItem)
         db.session.commit()
-        print(media_routes, '*****from backend **************************************')
         return mediaItem.to_dict()
     errors = form.errors
     return {'errors': validation_errors_to_error_messages(errors)}, 401
