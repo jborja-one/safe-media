@@ -2,6 +2,7 @@ import { LOAD_GROUPS } from './groups';
 export const LOAD_ALBUMS = 'albums/LOAD_ALBUMS';
 const CREATE_ALBUMS = 'albums/CREATE_ALBUMS';
 const DELETE_ALBUMS = 'albums/DELETE_ALBUMS';
+const CLEAR_ALBUMS = 'albums/CLEAR_ALBUMS';
 
 const load_albums = (albums) => ({
 	type: LOAD_ALBUMS,
@@ -16,6 +17,10 @@ const create_album = (albums) => ({
 const delete_album = (albumId) => ({
 	type: DELETE_ALBUMS,
 	albumId,
+});
+
+const clear_albums = () => ({
+	type: CREATE_ALBUMS,
 });
 
 export const getAlbums = (id) => async (dispatch) => {
@@ -60,6 +65,11 @@ export const deleteAlbum = (albumId) => async (dispatch) => {
 	}
 };
 
+export const clearAlbums = () => async (dispatch) => {
+	const clear = dispatch(clear_albums());
+	return clear;
+};
+
 const initialstate = {};
 
 const albumReducer = (state = initialstate, action) => {
@@ -81,6 +91,9 @@ const albumReducer = (state = initialstate, action) => {
 			delete new_state[action.albumId];
 			// debugger;
 			return new_state;
+		}
+		case CLEAR_ALBUMS: {
+			return {};
 		}
 		default:
 			return state;

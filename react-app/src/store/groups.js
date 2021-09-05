@@ -1,6 +1,7 @@
 export const LOAD_GROUPS = 'groups/LOAD_GROUPS';
 const DELETE_GROUP = 'groups/DELETE_GROUP';
 const CREATE_GROUP = 'groups/CREATE_GROUP';
+const CLEAR_GROUP = 'groups/CLEAR_GROUP';
 
 const load_groups = (groups) => ({
 	type: LOAD_GROUPS,
@@ -15,6 +16,10 @@ const create_group = (group) => ({
 const delete_group = (id) => ({
 	type: DELETE_GROUP,
 	id,
+});
+
+const clear_group = () => ({
+	type: CLEAR_GROUP,
 });
 
 export const getGroups = (id) => async (dispatch) => {
@@ -59,6 +64,11 @@ export const deleteGroup = (id) => async (dispatch) => {
 	}
 };
 
+export const clearGroup = () => async (dispatch) => {
+	const clear = dispatch(clear_group());
+	return clear;
+};
+
 const groupReducer = (state = {}, action) => {
 	if (!action) return state;
 	switch (action.type) {
@@ -77,6 +87,9 @@ const groupReducer = (state = {}, action) => {
 			const new_state = { ...state };
 			delete new_state[action.groupId];
 			return new_state;
+		}
+		case CLEAR_GROUP: {
+			return {};
 		}
 		default:
 			return state;

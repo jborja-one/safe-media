@@ -51,7 +51,7 @@ const Footer = () => {
 							className='contact-links'
 							href='https://www.linkedin.com/in/jonathan-borja-1a9959172//'>
 							Linkedin
-							<i class='icon fab fa-lg fa-linkedin'></i>
+							<i className='icon fab fa-lg fa-linkedin'></i>
 						</a>
 					</li>
 				</ul>
