@@ -67,12 +67,12 @@ export const clearMedia = () => async (dispatch) => {
 };
 
 const mediaReducer = (state = {}, action) => {
-	if (!action) return state;
+	// if (!action) return state;
 	switch (action.type) {
 		case LOAD_MEDIA: {
 			// debugger;
 			const { media_items } = action.media;
-			return { ...state, ...media_items };
+			return { ...media_items };
 		}
 		case CREATE_MEDIA: {
 			return { ...state, media_items: action.media_items };

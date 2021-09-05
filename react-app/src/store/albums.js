@@ -77,7 +77,7 @@ const albumReducer = (state = initialstate, action) => {
 	switch (action.type) {
 		case LOAD_ALBUMS: {
 			const { albums } = action.albums;
-			return { ...state, ...albums };
+			return { ...albums };
 		}
 		// case LOAD_GROUPS: {
 		// 	const { groups } = action.groups;
