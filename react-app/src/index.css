@@ -162,3 +162,9 @@ body {
 .groups-container {
 	margin-bottom: 80px;
 }
+.errors-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: red;
+}
