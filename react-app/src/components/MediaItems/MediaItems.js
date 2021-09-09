@@ -29,7 +29,7 @@ const MediaPage = () => {
 						{media_items &&
 							media_items?.map((item) => (
 								<>
-									<div key={item.id} className='groups-card'>
+									<div className='groups-card'>
 										<div>
 											<div>
 												<img
