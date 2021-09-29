@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { getAlbums } from '../../store/albums';
 import CreateAlbumModal from '../CreateAlbum';
 import DeleteAlbumModal from '../DeleteAlbumModal';
-// import SideBar from '../SideBar/SideBar';
+import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 import './GroupPage.css';
 
@@ -21,7 +21,7 @@ const GroupPage = () => {
 	return (
 		<>
 			<div className='profile-page__container'>
-				{/* <SideBar /> */}
+				<SideBar />
 				<div className='groups-container'>
 					<div className='page-title'>
 						<h1 className='title'>My Albums</h1>

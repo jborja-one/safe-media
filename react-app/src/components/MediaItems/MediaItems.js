@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getMedia } from '../../store/media_items';
 import CreateMediaModal from '../CreateMedia';
 import DeleteMediaModal from '../DeleteMediaModal';
-// import SideBar from '../SideBar/SideBar';
+import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 
 const MediaPage = () => {
@@ -19,7 +19,7 @@ const MediaPage = () => {
 	return (
 		<>
 			<div className='profile-page__container'>
-				{/* <SideBar /> */}
+				<SideBar />
 				<div className='groups-container'>
 					<div className='page-title'>
 						<h1 className='title'>My Safe Media</h1>

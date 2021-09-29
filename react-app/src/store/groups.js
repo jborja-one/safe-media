@@ -1,6 +1,7 @@
 export const LOAD_GROUPS = 'groups/LOAD_GROUPS';
 const DELETE_GROUP = 'groups/DELETE_GROUP';
 const CREATE_GROUP = 'groups/CREATE_GROUP';
+const EDIT_GROUP = 'groups/EDIT_GROUP';
 const CLEAR_GROUP = 'groups/CLEAR_GROUP';
 
 const load_groups = (groups) => ({
@@ -10,6 +11,11 @@ const load_groups = (groups) => ({
 
 const create_group = (group) => ({
 	type: CREATE_GROUP,
+	group,
+});
+
+const edit_group = (group) => ({
+	type: EDIT_GROUP,
 	group,
 });
 
@@ -51,6 +57,29 @@ export const createGroup =
 		}
 	};
 
+export const editGroup =
+	(id, groupCategory, groupTitle, groupIconId, userId) =>
+	async (dispatch) => {
+		const res = await fetch(`/api/groups/${id}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				id: id,
+				group_category: groupCategory,
+				group_title: groupTitle,
+				group_icon_id: groupIconId,
+				user_id: userId,
+			}),
+		});
+		const group = await res.json();
+		if (res.ok) {
+			dispatch(edit_group(group));
+		}
+		return group;
+	};
+
 export const deleteGroup = (id) => async (dispatch) => {
 	const deleted = await fetch(`/api/groups/${id}`, {
 		method: 'DELETE',
@@ -74,6 +103,13 @@ const groupReducer = (state = {}, action) => {
 			return { ...groups };
 		}
 		case CREATE_GROUP: {
+			const new_state = {
+				...state,
+				[action.group.id]: action.group,
+			};
+			return new_state;
+		}
+		case EDIT_GROUP: {
 			const new_state = {
 				...state,
 				[action.group.id]: action.group,

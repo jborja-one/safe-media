@@ -40,7 +40,6 @@ def get_groups(user_id):
 @group_routes.route('/', methods=['POST'])
 def create_group():
     form = CreateGroup()
-    print(form.data, '**********from routes**************')
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         group = Group(
@@ -54,6 +53,27 @@ def create_group():
         return group.to_dict()
     errors = form.errors
     return {'errors': validation_errors_to_error_messages(errors)}, 401
+
+
+@group_routes.route('/<int:id>', methods=['PUT'])
+def edit_group(id):
+    data = request.json
+    print(data, '******data from edit group**********')
+
+    group = Group.query.get(id)
+    icon = Group.query.filter(Group.group_icon_id == id).first()
+    print(icon, '******icon from route********????????????????????????')
+    # import pdb
+    # pdb.set_trace()
+
+    group.group_category = data['group_category']
+    group.group_title = data['group_title']
+    group.group_icon_id = data['group_icon_id']
+    current_user.id = data['user_id']
+
+    db.session.commit()
+
+    return {**group.to_dict()}
 
 
 @group_routes.route('/<int:id>', methods=['DELETE'])

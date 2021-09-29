@@ -4,7 +4,8 @@ import { useParams, Link } from 'react-router-dom';
 import { getGroups } from '../../store/groups';
 import CreateGroupModal from '../CreateGroup';
 import DeleteGroupModal from '../DeleteGroupModal';
-// import SideBar from '../SideBar/SideBar';
+import EditGroupModal from '../EditGroup';
+import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 import './ProfilePage.css';
 
@@ -21,7 +22,7 @@ const ProfilePage = () => {
 	return (
 		<>
 			<div className='profile-page__container'>
-				{/* <SideBar /> */}
+				<SideBar />
 				<div className='groups-container'>
 					<div className='page-title'>
 						<h1 className='title'>My Groups</h1>
@@ -68,6 +69,11 @@ const ProfilePage = () => {
 											</div>
 											<div>
 												<DeleteGroupModal
+													groupId={group.id}
+												/>
+											</div>
+											<div>
+												<EditGroupModal
 													groupId={group.id}
 												/>
 											</div>
